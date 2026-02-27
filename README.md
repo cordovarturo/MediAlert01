@@ -6,6 +6,63 @@ https://edith294.github.io/PaginawebappSalud/
 Vídeo de prueba
 https://drive.google.com/file/d/1xIXpM33FM7raiktjbWgTmhMpb74Ps2iN/view?usp=sharing
 
+
+## 📁 Descripción de Carpetas
+
+### `data/`
+Contiene todo lo relacionado con el manejo de datos de la aplicación, incluyendo la base de datos local y las fuentes de datos.
+
+- **dao/**: Objetos de acceso a datos para interactuar con Room
+- **database/**: Configuración de la base de datos Room y convertidores
+- **entity/**: Clases que representan las tablas de la base de datos
+- **model/**: Modelos de datos para la lógica de negocio
+- **repository/**: Repositorios que manejan las fuentes de datos (local y remota)
+
+### `navigation/`
+Gestiona la navegación entre las diferentes pantallas de la aplicación usando Jetpack Compose Navigation.
+
+### `receivers/`
+Contiene los BroadcastReceivers para manejar eventos del sistema como las alarmas de los recordatorios.
+
+### `ui/`
+Toda la interfaz de usuario de la aplicación construida con Jetpack Compose.
+
+- **screens/**: Las diferentes pantallas de la aplicación organizadas por funcionalidad
+  - **citas/**: Pantallas para gestionar citas médicas
+  - **configuracion/**: Pantalla de configuración de la aplicación
+  - **emergencia/**: Pantallas para gestionar contactos de emergencia
+  - **farmacias/**: Pantalla para buscar farmacias cercanas
+  - **home/**: Pantalla principal de la aplicación
+  - **medicamentos/**: Pantallas para gestionar medicamentos
+- **notificaciones/**: Componentes para manejar notificaciones
+- **theme/**: Configuración del tema visual (colores, tipografía, estilos)
+- **utils/**: Utilidades y helpers para la interfaz
+
+### `viewmodel/`
+ViewModels que separan la lógica de negocio de la interfaz de usuario y manejan el estado de las pantallas.
+
+### Archivos Principales
+
+- **MainActivity.kt**: Actividad principal que inicia la aplicación
+- **AndroidManifest.xml**: Configuración de la aplicación (no mostrado en el árbol pero mencionado)
+
+## 🔧 Tecnologías Utilizadas
+
+- **Kotlin**: Lenguaje de programación principal
+- **Jetpack Compose**: Para la interfaz de usuario moderna
+- **Room**: Base de datos local
+- **Firebase**: Para autenticación, base de datos en la nube y notificaciones
+- **Google Maps**: Para ubicación de farmacias cercanas
+- **Corrutinas**: Para operaciones asíncronas
+- **Flow**: Para datos reactivos
+- **ViewModel**: Para manejar el estado de la UI
+- **Navigation Component**: Para la navegación entre pantallas
+- **AlarmManager**: Para programar recordatorios y notificaciones
+
+---
+
+¿Quieres que documente algún archivo en específico de esta estructura?
+
 # AppointmentDao.kt
 
 ```kotlin
