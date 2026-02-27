@@ -1,101 +1,83 @@
-
-```markdown
 # MediAlert01
 
-## Introduccion
+## Introducción
 
-MediAlerta es una aplicacion movil desarrollada para Android que tiene como objetivo ayudar a las personas a llevar un control mas organizado de su salud. La aplicacion nace de la necesidad de muchas personas que toman medicamentos de forma regular, tienen citas medicas frecuentes o simplemente quieren estar preparados ante cualquier emergencia.
+MediAlerta es una aplicación móvil desarrollada para Android que tiene como objetivo ayudar a las personas a llevar un control más organizado de su salud. La aplicación nace de la necesidad de muchas personas que toman medicamentos de forma regular, tienen citas médicas frecuentes o simplemente quieren estar preparados ante cualquier emergencia.
 
-La aplicacion permite a los usuarios registrar sus medicamentos con sus respectivos horarios y dosis, programar citas medicas, guardar contactos de emergencia y localizar farmacias cercanas a su ubicacion. Todo esto en un solo lugar, con una interfaz colorida y facil de usar que no requiere conocimientos tecnicos.
+La aplicación permite a los usuarios registrar sus medicamentos con sus respectivos horarios y dosis, programar citas médicas, guardar contactos de emergencia y localizar farmacias cercanas a su ubicación. Todo esto en un solo lugar, con una interfaz colorida y fácil de usar que no requiere conocimientos técnicos.
 
-El desarrollo de MediAlerta se realizo utilizando Kotlin como lenguaje de programacion principal y Jetpack Compose para construir la interfaz de usuario moderna y reactiva. Los datos se almacenan tanto localmente en el dispositivo usando Room, como en la nube usando Firebase, lo que permite que la informacion no se pierda aunque se desinstale la aplicacion o se cambie de telefono.
+El desarrollo de MediAlerta se realizó utilizando Kotlin como lenguaje de programación principal y Jetpack Compose para construir la interfaz de usuario moderna y reactiva. Los datos se almacenan tanto localmente en el dispositivo usando Room, como en la nube usando Firebase, lo que permite que la información no se pierda aunque se desinstale la aplicación o se cambie de teléfono.
 
-El equipo detras de MediAlerta esta conformado por Colin Cardenas Kelly Anahi y Mendez Galvan Claudia Lizbeth, quienes disenaron y programaron cada una de las funcionalidades pensando en hacer la vida mas facil a las personas que necesitan recordatorios constantes para su salud.
+El equipo detrás de MediAlerta está conformado por Colin Cardenas Kelly Anahi y Mendez Galvan Claudia Lizbeth, quienes diseñaron y programaron cada una de las funcionalidades pensando en hacer la vida más fácil a las personas que necesitan recordatorios constantes para su salud.
 
-## Link de descarga
+**Link de descarga:** https://edith294.github.io/PaginawebappSalud/
 
-https://edith294.github.io/PaginawebappSalud/
+**Vídeo de prueba:** https://drive.google.com/file/d/1xIXpM33FM7raiktjbWgTmhMpb74Ps2iN/view?usp=sharing
 
-## Video de prueba
+---
 
-https://drive.google.com/file/d/1xIXpM33FM7raiktjbWgTmhMpb74Ps2iN/view?usp=sharing
+## Descripción de Carpetas
 
-## Descripcion de Carpetas
+### `data/`
 
-### data/
+Contiene todo lo relacionado con el manejo de datos de la aplicación, incluyendo la base de datos local y las fuentes de datos.
 
-Contiene todo lo relacionado con el manejo de datos de la aplicacion, incluyendo la base de datos local y las fuentes de datos.
+- **dao/**: Objetos de acceso a datos para interactuar con Room.
+- **database/**: Configuración de la base de datos Room y convertidores.
+- **entity/**: Clases que representan las tablas de la base de datos.
+- **model/**: Modelos de datos para la lógica de negocio.
+- **repository/**: Repositorios que manejan las fuentes de datos (local y remota).
 
-- **dao/**: Objetos de acceso a datos para interactuar con Room
-- **database/**: Configuracion de la base de datos Room y convertidores
-- **entity/**: Clases que representan las tablas de la base de datos
-- **model/**: Modelos de datos para la logica de negocio
-- **repository/**: Repositorios que manejan las fuentes de datos (local y remota)
+### `navigation/`
 
-### navigation/
+Gestiona la navegación entre las diferentes pantallas de la aplicación usando Jetpack Compose Navigation.
 
-Gestiona la navegacion entre las diferentes pantallas de la aplicacion usando Jetpack Compose Navigation.
-
-### receivers/
+### `receivers/`
 
 Contiene los BroadcastReceivers para manejar eventos del sistema como las alarmas de los recordatorios.
 
-### ui/
+### `ui/`
 
-Toda la interfaz de usuario de la aplicacion construida con Jetpack Compose.
+Toda la interfaz de usuario de la aplicación construida con Jetpack Compose.
 
-- **screens/**: Las diferentes pantallas de la aplicacion organizadas por funcionalidad
-  - **citas/**: Pantallas para gestionar citas medicas
-  - **configuracion/**: Pantalla de configuracion de la aplicacion
-  - **emergencia/**: Pantallas para gestionar contactos de emergencia
-  - **farmacias/**: Pantalla para buscar farmacias cercanas
-  - **home/**: Pantalla principal de la aplicacion
-  - **medicamentos/**: Pantallas para gestionar medicamentos
-- **notificaciones/**: Componentes para manejar notificaciones
-- **theme/**: Configuracion del tema visual (colores, tipografia, estilos)
-- **utils/**: Utilidades y helpers para la interfaz
+- **screens/**: Las diferentes pantallas de la aplicación organizadas por funcionalidad.
+  - **citas/**: Pantallas para gestionar citas médicas.
+  - **configuracion/**: Pantalla de configuración de la aplicación.
+  - **emergencia/**: Pantallas para gestionar contactos de emergencia.
+  - **farmacias/**: Pantalla para buscar farmacias cercanas.
+  - **home/**: Pantalla principal de la aplicación.
+  - **medicamentos/**: Pantallas para gestionar medicamentos.
+- **notificaciones/**: Componentes para manejar notificaciones.
+- **theme/**: Configuración del tema visual (colores, tipografía, estilos).
+- **utils/**: Utilidades y helpers para la interfaz.
 
-### viewmodel/
+### `viewmodel/`
 
-ViewModels que separan la logica de negocio de la interfaz de usuario y manejan el estado de las pantallas.
+ViewModels que separan la lógica de negocio de la interfaz de usuario y manejan el estado de las pantallas.
 
 ### Archivos Principales
 
-- **MainActivity.kt**: Actividad principal que inicia la aplicacion
-- **AndroidManifest.xml**: Configuracion de la aplicacion
+- **MainActivity.kt**: Actividad principal que inicia la aplicación.
+- **AndroidManifest.xml**: Configuración de la aplicación.
 
-## Tecnologias Utilizadas
+---
 
-- **Kotlin**: Lenguaje de programacion principal
-- **Jetpack Compose**: Para la interfaz de usuario moderna
-- **Room**: Base de datos local
-- **Firebase**: Para autenticacion, base de datos en la nube y notificaciones
-- **Google Maps**: Para ubicacion de farmacias cercanas
-- **Corrutinas**: Para operaciones asincronas
-- **Flow**: Para datos reactivos
-- **ViewModel**: Para manejar el estado de la UI
-- **Navigation Component**: Para la navegacion entre pantallas
-- **AlarmManager**: Para programar recordatorios y notificaciones
+## Tecnologías Utilizadas
 
-## Documentacion de Componentes Clave
+- **Kotlin**: Lenguaje de programación principal.
+- **Jetpack Compose**: Para la interfaz de usuario moderna.
+- **Room**: Base de datos local.
+- **Firebase**: Para autenticación, base de datos en la nube y notificaciones.
+- **Google Maps**: Para ubicación de farmacias cercanas.
+- **Corrutinas**: Para operaciones asíncronas.
+- **Flow**: Para datos reactivos.
+- **ViewModel**: Para manejar el estado de la UI.
+- **Navigation Component**: Para la navegación entre pantallas.
+- **AlarmManager**: Para programar recordatorios y notificaciones.
 
-### AppointmentDao.kt
+---
 
-#### Descripcion General
-
-Este archivo define la interfaz de acceso a datos (DAO) para la entidad AppointmentEntity utilizando Room, la biblioteca de persistencia de Android. Su funcion principal es gestionar las operaciones de la base de datos local relacionadas con las citas medicas.
-
-#### Ubicacion
-
-mx.edu.utng.aimc.com.pantallaprincipal.data.dao
-
-#### Dependencias
-
-- androidx.room.* - Para las anotaciones y operaciones de Room
-- kotlinx.coroutines.flow.Flow - Para observar cambios en tiempo real
-- mx.edu.utng.aimc.com.pantallaprincipal.data.entity.AppointmentEntity - La entidad que representa una cita
-
-#### Codigo Completo
+## AppointmentDao.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.dao
@@ -104,61 +86,80 @@ import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import mx.edu.utng.aimc.com.pantallaprincipal.data.entity.AppointmentEntity
 
-/**
- * Data Access Object (DAO) para la gestion de citas medicas.
- * 
- * Proporciona metodos para insertar, eliminar y consultar citas
- * en la base de datos local utilizando Room.
- */
 @Dao
 interface AppointmentDao {
 
-    /**
-     * Inserta una nueva cita en la base de datos.
-     * 
-     * Si ya existe una cita con el mismo ID, sera reemplazada
-     * debido a la estrategia OnConflictStrategy.REPLACE.
-     * 
-     * @param appointment El objeto AppointmentEntity a insertar
-     * @return El ID generado para la cita insertada (tipo Long)
-     */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAppointment(appointment: AppointmentEntity): Long
 
-    /**
-     * Elimina una cita existente de la base de datos.
-     * 
-     * @param appointment El objeto AppointmentEntity a eliminar
-     */
     @Delete
     suspend fun deleteAppointment(appointment: AppointmentEntity)
 
-    /**
-     * Obtiene todas las citas guardadas, ordenadas por fecha y hora.
-     * 
-     * Utiliza Flow para que la UI pueda observar los cambios en
-     * tiempo real. Cuando se inserta o elimina una cita, la lista
-     * se actualiza automaticamente.
-     * 
-     * @return Flow que emite una lista de AppointmentEntity ordenada
-     *         por fecha/hora ascendente (de la mas proxima a la mas lejana)
-     */
     @Query("SELECT * FROM appointments ORDER BY dateTime ASC")
     fun getAllAppointments(): Flow<List<AppointmentEntity>>
 }
 ```
 
-### EmergencyContactDao.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo es el encargado de comunicarse con la base de datos local de la aplicación, específicamente con la tabla donde se guardan las citas médicas. Usa Room, que es una herramienta que hace más fácil guardar y recuperar información en el teléfono.
 
-Este archivo es el encargado de comunicarse con la base de datos local de la aplicacion, especificamente con la tabla donde se guardan los contactos de emergencia. Usa Room para facilitar el guardado y recuperacion de esta informacion en el telefono.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.dao`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.dao
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es un DAO?**
+
+Un DAO (Data Access Object) es un componente que actúa como intermediario entre la aplicación y la base de datos. En este caso, `AppointmentDao` se encarga de todas las operaciones relacionadas con las citas médicas.
+
+**Anotaciones y su Significado**
+
+- `@Dao`: Le indica a la aplicación que esta interfaz va a manejar las operaciones de la base de datos para las citas.
+- `@Insert`: Marca el método que insertará nuevos registros en la base de datos.
+- `@Delete`: Marca el método que eliminará registros existentes.
+- `@Query`: Permite escribir consultas SQL personalizadas para obtener datos específicos.
+
+**Métodos y su Función**
+
+`insertAppointment()` — Guarda una nueva cita en la base de datos. Si ya existía una con el mismo identificador, la reemplaza por la nueva debido a la estrategia `OnConflictStrategy.REPLACE`. Devuelve un número que es el identificador con el que se guardó la cita.
+
+- Parámetros: Recibe un objeto `AppointmentEntity` que contiene todos los datos de la cita.
+- Retorno: Un valor `Long` que es el ID único asignado a la cita recién guardada.
+
+`deleteAppointment()` — Elimina una cita existente de la base de datos. Solo hay que pasarle la cita que se quiere borrar y él se encarga de quitarla de la tabla.
+
+- Parámetros: Recibe el objeto `AppointmentEntity` que se desea eliminar.
+- Retorno: No devuelve ningún valor.
+
+`getAllAppointments()` — Obtiene todas las citas guardadas y las entrega ordenadas por fecha y hora. Usa `Flow`, que es una forma de estar siempre actualizado: si se agrega o elimina una cita, la lista se actualiza automáticamente.
+
+- Parámetros: No recibe parámetros.
+- Retorno: Un `Flow` que emite una lista de objetos `AppointmentEntity`. Cada vez que hay cambios en la tabla, esta lista se actualiza automáticamente.
+
+### Flujo de Trabajo Típico
+
+1. **Guardar una cita**: Cuando el usuario crea una nueva cita, la aplicación llama a `insertAppointment()` con los datos de la cita.
+2. **Consultar citas**: La pantalla que muestra las citas está observando `getAllAppointments()` para tener siempre la lista actualizada.
+3. **Eliminar una cita**: Cuando el usuario decide borrar una cita, la aplicación llama a `deleteAppointment()` con la cita que se quiere eliminar.
+4. **Actualización automática**: Al modificar la base de datos, el `Flow` emite automáticamente la nueva lista y la pantalla se actualiza sin necesidad de recargar.
+
+### Notas Importantes
+
+- Los métodos `insertAppointment()` y `deleteAppointment()` son `suspend`, lo que significa que deben ejecutarse en segundo plano para no bloquear la interfaz de usuario.
+- La estrategia `OnConflictStrategy.REPLACE` garantiza que no habrá conflictos si se intenta guardar una cita con un ID que ya existe.
+- El uso de `Flow` hace que la aplicación sea más eficiente, ya que no necesita estar haciendo consultas constantemente para verificar si los datos cambiaron.
+
+### Archivos Relacionados
+
+- `AppointmentEntity.kt` — Define la estructura de una cita en la base de datos.
+- `AppDatabase.kt` — La base de datos principal que contiene esta tabla.
+- `AppointmentRepository.kt` — El repositorio que utiliza este DAO para sus operaciones.
+
+---
+
+## EmergencyContactDao.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.dao
@@ -184,17 +185,72 @@ interface EmergencyContactDao {
 }
 ```
 
-### MedicationDao.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo es el encargado de comunicarse con la base de datos local de la aplicación, específicamente con la tabla donde se guardan los contactos de emergencia. Usa Room para facilitar el guardado y recuperación de esta información en el teléfono.
 
-Este archivo es el encargado de comunicarse con la base de datos local de la aplicacion, especificamente con la tabla donde se guardan los medicamentos. Usa Room para facilitar el guardado y recuperacion de esta informacion en el telefono.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.dao`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.dao
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es un DAO?**
+
+Un DAO (Data Access Object) es un componente que actúa como intermediario entre la aplicación y la base de datos. En este caso, `EmergencyContactDao` se encarga de todas las operaciones relacionadas con los contactos de emergencia.
+
+**Anotaciones y su Significado**
+
+- `@Dao`: Le indica a la aplicación que esta interfaz va a manejar las operaciones de la base de datos para los contactos de emergencia.
+- `@Insert`: Marca el método que insertará nuevos contactos en la base de datos.
+- `@Delete`: Marca el método que eliminará contactos existentes.
+- `@Query`: Permite escribir consultas SQL personalizadas para obtener o eliminar datos específicos.
+
+**Métodos y su Función**
+
+`insert()` — Guarda un nuevo contacto de emergencia en la base de datos. Si ya existía un contacto con el mismo identificador, lo reemplaza por el nuevo. Devuelve el identificador con el que se guardó el contacto.
+
+- Parámetros: Recibe un objeto `EmergencyContactEntity` con todos los datos del contacto.
+- Retorno: Un valor `Long` que es el ID único asignado al contacto recién guardado.
+
+`delete()` — Elimina un contacto de emergencia existente de la base de datos.
+
+- Parámetros: Recibe el objeto `EmergencyContactEntity` que se desea eliminar.
+- Retorno: No devuelve ningún valor.
+
+`getAllContacts()` — Obtiene todos los contactos guardados y los entrega ordenados alfabéticamente por nombre. Usa `Flow` para que la lista se mantenga siempre actualizada.
+
+- Parámetros: No recibe parámetros.
+- Retorno: Un `Flow` que emite una lista de objetos `EmergencyContactEntity`.
+
+`deleteById()` — Elimina un contacto de emergencia usando directamente su identificador, sin necesidad de tener el objeto completo.
+
+- Parámetros: Recibe un valor `contactId` de tipo `Long`.
+- Retorno: No devuelve ningún valor.
+
+### Flujo de Trabajo Típico
+
+1. **Guardar un contacto**: Cuando el usuario agrega un nuevo número de emergencia, la aplicación llama a `insert()` con los datos del contacto.
+2. **Consultar contactos**: La pantalla que muestra los contactos está observando `getAllContacts()` para tener siempre la lista actualizada.
+3. **Eliminar un contacto**: Cuando el usuario decide borrar un contacto, la aplicación puede usar `delete()` si tiene el objeto completo, o `deleteById()` si solo tiene el ID.
+4. **Actualización automática**: Al modificar la base de datos, el `Flow` emite automáticamente la nueva lista.
+
+### Notas Importantes
+
+- Todos los métodos son `suspend`, lo que significa que deben ejecutarse en segundo plano para no bloquear la interfaz de usuario.
+- La estrategia `OnConflictStrategy.REPLACE` garantiza que no habrá conflictos si se intenta guardar un contacto con un ID que ya existe.
+- El método `deleteById()` ofrece una forma más directa de eliminar contactos cuando no se tiene el objeto completo, lo cual es útil en ciertos casos como cuando se trabaja con listas donde solo se conoce el ID.
+
+### Archivos Relacionados
+
+- `EmergencyContactEntity.kt` — Define la estructura de un contacto de emergencia en la base de datos.
+- `AppDatabase.kt` — La base de datos principal que contiene esta tabla.
+- `EmergencyContactRepository.kt` — El repositorio que utiliza este DAO para sus operaciones.
+- `AgregarNumeroEmergencia.kt` — Pantalla donde se agregan nuevos contactos.
+
+---
+
+## MedicationDao.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.dao
@@ -220,17 +276,77 @@ interface MedicationDao {
 }
 ```
 
-### AppDatabase.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo es el encargado de comunicarse con la base de datos local de la aplicación, específicamente con la tabla donde se guardan los medicamentos. Usa Room para facilitar el guardado y recuperación de esta información en el teléfono.
 
-Este archivo define la base de datos local de la aplicacion usando Room. Es el corazon del almacenamiento de datos en el telefono, donde se guardan todos los registros de medicamentos, citas medicas y contactos de emergencia. Actua como el punto central que conecta todas las tablas con sus respectivos DAOs.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.dao`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.database
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es un DAO?**
+
+Un DAO (Data Access Object) es un componente que actúa como intermediario entre la aplicación y la base de datos. En este caso, `MedicationDao` se encarga de todas las operaciones relacionadas con los medicamentos que el usuario registra.
+
+**Anotaciones y su Significado**
+
+- `@Dao`: Le indica a la aplicación que esta interfaz va a manejar las operaciones de la base de datos para los medicamentos.
+- `@Insert`: Marca el método que insertará nuevos medicamentos en la base de datos.
+- `@Delete`: Marca el método que eliminará medicamentos existentes.
+- `@Query`: Permite escribir consultas SQL personalizadas para obtener datos específicos.
+- `@Update`: Marca el método que actualizará medicamentos existentes.
+
+**Métodos y su Función**
+
+`insertMedication()` — Guarda un nuevo medicamento en la base de datos. Si ya existía uno con el mismo identificador, lo reemplaza. Devuelve el identificador asignado.
+
+- Parámetros: Recibe un objeto `MedicationEntity` con todos los datos del medicamento.
+- Retorno: Un valor `Long` que es el ID único asignado al medicamento recién guardado. Este valor es importante porque permite hacer referencia al medicamento en otras partes de la aplicación.
+
+`deleteMedication()` — Elimina un medicamento existente de la base de datos.
+
+- Parámetros: Recibe el objeto `MedicationEntity` que se desea eliminar.
+- Retorno: No devuelve ningún valor.
+
+`getAllMedications()` — Obtiene todos los medicamentos guardados. Usa `Flow` para que la lista se mantenga siempre actualizada.
+
+- Parámetros: No recibe parámetros.
+- Retorno: Un `Flow` que emite una lista de objetos `MedicationEntity`.
+
+`updateMedication()` — Actualiza la información de un medicamento que ya existe en la base de datos. Es diferente a `insertMedication` porque modifica un registro existente conservando su mismo identificador.
+
+- Parámetros: Recibe el objeto `MedicationEntity` con los datos actualizados.
+- Retorno: No devuelve ningún valor.
+
+### Flujo de Trabajo Típico
+
+1. **Guardar un medicamento**: La aplicación llama a `insertMedication()` y recibe el ID asignado.
+2. **Consultar medicamentos**: La pantalla observa `getAllMedications()` para tener siempre la lista actualizada.
+3. **Actualizar un medicamento**: La aplicación llama a `updateMedication()` con los datos modificados.
+4. **Eliminar un medicamento**: La aplicación llama a `deleteMedication()` con el medicamento que se quiere eliminar.
+5. **Actualización automática**: Al modificar la base de datos, el `Flow` emite automáticamente la nueva lista.
+
+### Notas Importantes
+
+- Todos los métodos son `suspend`, lo que significa que deben ejecutarse en segundo plano para no bloquear la interfaz de usuario.
+- La estrategia `OnConflictStrategy.REPLACE` garantiza que no habrá conflictos si se intenta guardar un medicamento con un ID que ya existe.
+- El método `insertMedication()` devuelve el ID del medicamento recién creado, lo cual es útil para referenciarlo en otras partes de la aplicación como en recordatorios o alarmas.
+- A diferencia de los otros DAOs, este incluye un método `@Update` específico para modificar medicamentos existentes, lo que da más flexibilidad en la gestión de los datos.
+
+### Archivos Relacionados
+
+- `MedicationEntity.kt` — Define la estructura de un medicamento en la base de datos.
+- `AppDatabase.kt` — La base de datos principal que contiene esta tabla.
+- `MedicationRepository.kt` — El repositorio que utiliza este DAO para sus operaciones.
+- `FirebaseMedicationRepository.kt` — Repositorio que sincroniza con la nube.
+- `AddMedicationScreen.kt` — Pantalla donde se agregan nuevos medicamentos.
+- `MedicamentosScreen.kt` — Pantalla donde se muestra la lista de medicamentos.
+
+---
+
+## AppDatabase.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.database
@@ -280,17 +396,81 @@ abstract class AppDatabase : RoomDatabase() {
 }
 ```
 
-### Converters.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define la base de datos local de la aplicación usando Room. Es el corazón del almacenamiento de datos en el teléfono, donde se guardan todos los registros de medicamentos, citas médicas y contactos de emergencia. Actúa como el punto central que conecta todas las tablas con sus respectivos DAOs.
 
-Este archivo contiene una clase especial llamada Converters que sirve como traductor entre tipos de datos que Kotlin maneja facilmente y tipos que la base de datos SQLite puede guardar. En particular, se encarga de convertir listas de texto en algo que se pueda almacenar en una sola celda de la base de datos y viceversa.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.database`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.database
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es AppDatabase?**
+
+`AppDatabase` es la clase principal que representa la base de datos SQLite en el teléfono. Usando Room, se encarga de crear y administrar las tablas, las relaciones entre ellas y proporcionar acceso a los datos a través de los DAOs.
+
+**Anotaciones y su Significado**
+
+`@Database` — Le indica a Room que esta clase es una base de datos. Tiene dos partes importantes:
+
+- `entities`: Lista las clases que serán tablas en la base de datos. Aquí se incluyen `MedicationEntity`, `AppointmentEntity` y `EmergencyContactEntity`.
+- `version`: El número de versión de la base de datos. Cada vez que se cambia la estructura de las tablas, este número debe aumentarse. Actualmente está en la versión 4.
+
+`@TypeConverters` — Indica que se usará la clase `Converters` para convertir tipos de datos especiales que Room no maneja por defecto, como fechas o listas, a formatos que sí puede guardar en SQLite.
+
+**Tablas Incluidas**
+
+La base de datos tiene tres tablas principales:
+
+- `MedicationEntity`: Guarda toda la información de los medicamentos que el usuario registra, como nombre, dosis, horarios, etc.
+- `AppointmentEntity`: Almacena los datos de las citas médicas, incluyendo fecha, hora, lugar y motivo de la cita.
+- `EmergencyContactEntity`: Contiene los contactos de emergencia con nombres, teléfonos y parentesco.
+
+**Métodos Abstractos**
+
+- `medicationDao()`: Proporciona acceso al DAO de medicamentos.
+- `appointmentDao()`: Da acceso al DAO de citas médicas.
+- `emergencyContactDao()`: Permite acceder al DAO de contactos de emergencia.
+
+**Patrón Singleton**
+
+`@Volatile private var INSTANCE` — Esta palabra clave asegura que los cambios en la variable `INSTANCE` sean visibles inmediatamente para todos los hilos de ejecución, previniendo problemas de concurrencia.
+
+`getDatabase(context: Context)` — Proporciona la instancia de la base de datos. Verifica si ya existe una instancia creada; si no, entra en un bloque `synchronized` para crear una sola instancia de forma segura.
+
+**Configuración de la Base de Datos**
+
+`Room.databaseBuilder()` configura la base de datos con tres parámetros:
+
+- `context.applicationContext`: El contexto de la aplicación.
+- `AppDatabase::class.java`: La clase de la base de datos que se está construyendo.
+- `"med_alert_db"`: El nombre del archivo de base de datos.
+
+`.fallbackToDestructiveMigration()` — Cuando hay cambios en las tablas sin una migración definida, Room borra todas las tablas y las vuelve a crear. Es útil durante el desarrollo pero tiene la desventaja de que se pierden todos los datos guardados.
+
+### Flujo de Trabajo Típico
+
+1. **Inicialización**: La aplicación llama a `AppDatabase.getDatabase(context)` para obtener la instancia de la base de datos.
+2. **Acceso a DAOs**: A través de la instancia, la aplicación obtiene los DAOs necesarios.
+3. **Operaciones**: Los ViewModels y Repositorios usan estos DAOs para realizar operaciones en la base de datos.
+4. **Actualizaciones**: Cuando el usuario agrega, modifica o elimina información, los cambios se reflejan inmediatamente.
+
+### Notas Importantes
+
+- La versión actual de la base de datos es la 4, lo que indica que ha pasado por varios cambios estructurales durante el desarrollo.
+- El uso de `.fallbackToDestructiveMigration()` significa que al actualizar la aplicación, todos los datos guardados se perderán. En una versión final para producción, esto debería reemplazarse con migraciones adecuadas.
+- El patrón Singleton con `@Volatile` y `synchronized` asegura que la base de datos funcione correctamente incluso en aplicaciones con múltiples hilos de ejecución.
+
+### Archivos Relacionados
+
+- `Converters.kt` — Clase que convierte tipos especiales para guardarlos en la base de datos.
+- `MedicationDao.kt`, `AppointmentDao.kt`, `EmergencyContactDao.kt` — Los DAOs que esta base de datos proporciona.
+- `MedicationEntity.kt`, `AppointmentEntity.kt`, `EmergencyContactEntity.kt` — Las entidades que definen las tablas.
+
+---
+
+## Converters.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.database
@@ -311,17 +491,83 @@ class Converters {
 }
 ```
 
-### AppointmentEntity.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo contiene una clase especial llamada `Converters` que sirve como traductor entre tipos de datos que Kotlin maneja fácilmente y tipos que la base de datos SQLite puede guardar. En particular, se encarga de convertir listas de texto en algo que se pueda almacenar en una sola celda de la base de datos y viceversa.
 
-Este archivo define la estructura de como se guardan las citas medicas en la base de datos del telefono. Es como un molde que le dice a la aplicacion que informacion debe guardar de cada cita y de que tipo es cada dato. Cada vez que el usuario agrega una cita, se crea un objeto de este tipo para almacenarla.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.database`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.entity
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Por qué se necesitan Converters?**
+
+SQLite solo puede guardar tipos de datos básicos como números, texto y fechas. No entiende tipos más complejos de Kotlin como listas, conjuntos o clases personalizadas. Los `TypeConverter` resuelven este problema actuando como puentes: convierten tipos complejos a tipos simples para guardarlos, y luego los vuelven a convertir a su forma original cuando se recuperan.
+
+`@TypeConverter` — Le indica a Room que estos métodos son convertidores. Cuando Room encuentre un campo de tipo `List<String>` en una entidad, automáticamente usará estos métodos para convertirlo a `String` antes de guardarlo.
+
+**Métodos y su Función**
+
+`fromList()` — Convierte una lista de textos en un solo texto largo, uniendo los elementos con comas.
+
+- Ejemplo: `["lunes", "martes", "miércoles"]` → `"lunes,martes,miércoles"`.
+- Parámetros: Recibe una lista de strings (`List<String>`).
+- Retorno: Devuelve un solo string con todos los elementos unidos por comas.
+
+`toList()` — Hace la operación contraria: toma un texto con elementos separados por comas y lo convierte en lista.
+
+- Ejemplo: `"lunes,martes,miércoles"` → `["lunes", "martes", "miércoles"]`.
+- Parámetros: Recibe un string que contiene elementos separados por comas.
+- Retorno: Devuelve una lista de strings. Si el texto está vacío, devuelve una lista vacía.
+
+**Ejemplos Prácticos**
+
+*Ejemplo 1: Horarios de medicamentos*
+
+Imagina que un medicamento se toma en múltiples horarios: 8:00 AM, 2:00 PM y 8:00 PM.
+
+En la entidad `MedicationEntity`:
+
+```kotlin
+val horarios: List<String> = listOf("8:00 AM", "2:00 PM", "8:00 PM")
+```
+
+Cuando se guarda en la base de datos, Room usa `fromList()` y convierte la lista a `"8:00 AM,2:00 PM,8:00 PM"`. Al recuperarla, usa `toList()` para devolverla como `["8:00 AM", "2:00 PM", "8:00 PM"]`.
+
+*Ejemplo 2: Días de la semana para recordatorios*
+
+- Guardar: `["lunes", "miércoles", "viernes"]` → `"lunes,miércoles,viernes"`
+- Recuperar: `"lunes,miércoles,viernes"` → `["lunes", "miércoles", "viernes"]`
+
+**Casos Especiales**
+
+*Listas Vacías* — El método `toList()` tiene una validación importante:
+
+```kotlin
+return if (value.isEmpty()) emptyList() else value.split(",")
+```
+
+Si el texto guardado está vacío, devuelve directamente una lista vacía en lugar de intentar hacer `split(",")`, lo que produciría una lista con un elemento vacío.
+
+*Elementos con Comas* — Una limitación importante es que si algún elemento de la lista contiene una coma, el resultado al recuperar la información no será el esperado. Para los usos típicos de esta aplicación, este método funciona bien.
+
+### Notas Importantes
+
+- Estos convertidores son específicos para `List<String>`. Si se necesitara convertir otros tipos, habría que agregar más métodos en esta clase.
+- Esta clase se registra en `AppDatabase` con la anotación `@TypeConverters(Converters::class)`.
+- Room cachea los convertidores, así que usarlos no afecta negativamente el rendimiento.
+
+### Archivos Relacionados
+
+- `AppDatabase.kt` — Donde se registra este convertidor con `@TypeConverters(Converters::class)`.
+- `MedicationEntity.kt` — La entidad que usa listas para horarios o días.
+- `AppointmentEntity.kt` — Podría usar listas para recordatorios o notas.
+- `EmergencyContactEntity.kt` — Podría usar listas para múltiples teléfonos.
+
+---
+
+## AppointmentEntity.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.entity
@@ -338,17 +584,73 @@ data class AppointmentEntity(
 )
 ```
 
-### EmergencyContactEntity.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define la estructura de cómo se guardan las citas médicas en la base de datos del teléfono. Es como un molde que le dice a la aplicación qué información debe guardar de cada cita y de qué tipo es cada dato. Cada vez que el usuario agrega una cita, se crea un objeto de este tipo para almacenarla.
 
-Este archivo define la estructura de como se guardan los contactos de emergencia en la base de datos del telefono. Es una entidad simple pero fundamental para la funcionalidad de emergencias de la aplicacion.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.entity`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.entity
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es una Entidad?**
+
+En el contexto de bases de datos, una entidad es una representación de una tabla. Cada objeto de tipo `AppointmentEntity` corresponde a una fila en la tabla `appointments`, y cada propiedad de la clase corresponde a una columna.
+
+**Anotaciones y su Significado**
+
+- `@Entity`: Le indica a Room que esta clase representa una tabla. El parámetro `tableName = "appointments"` especifica el nombre de la tabla.
+- `@PrimaryKey`: Marca una propiedad como la llave principal de la tabla. Con `autoGenerate = true`, Room genera automáticamente un valor único cada vez que se inserta una nueva cita.
+
+**Propiedades de la Entidad**
+
+`id: Int = 0` — La llave principal, identificador único de cada cita. Se genera automáticamente al guardar; el valor 0 es solo un marcador de posición.
+
+`place: String = ""` — Almacena el lugar donde será la cita médica. Ejemplos: `"Consultorio del Dr. Martínez"`, `"Hospital General, piso 3"`.
+
+`dateTime: Long = 0L` — Guarda la fecha y hora de la cita como un timestamp en milisegundos desde el 1 de enero de 1970. Guardar fechas como números tiene ventajas: ocupan menos espacio, se pueden ordenar fácilmente y se convierten a cualquier formato después.
+
+**Cómo se Usa en la Práctica**
+
+Crear una nueva cita:
+
+```kotlin
+val timestamp = 1705325400000L
+
+val nuevaCita = AppointmentEntity(
+    place = "Consultorio Dental",
+    dateTime = timestamp
+)
+```
+
+Recuperar una cita de la base de datos:
+
+```kotlin
+AppointmentEntity(
+    id = 5,  // Ya tiene un ID asignado por Room
+    place = "Consultorio Dental",
+    dateTime = 1705325400000L
+)
+```
+
+### Notas Importantes
+
+- Todas las propiedades tienen valores por defecto, lo que permite crear objetos sin tener que especificar todos los campos.
+- Aunque aquí se usa `Int` para el ID, en otros DAOs como `MedicationDao` se usa `Long`. La diferencia es el tamaño máximo que pueden almacenar, pero para una aplicación normal, `Int` es suficiente.
+
+### Archivos Relacionados
+
+- `AppointmentDao.kt` — El DAO que usa esta entidad para operaciones de base de datos.
+- `AppDatabase.kt` — La base de datos que incluye esta entidad en su lista de tablas.
+- `AppointmentRepository.kt` — El repositorio que maneja la lógica de negocio de las citas.
+- `FirebaseAppointmentRepository.kt` — Para sincronizar con la nube.
+- `AgregarCita.kt` y `CitasMedicasScreen.kt` — Las pantallas donde se crean y muestran las citas.
+- `AppointmentViewModel.kt` — El ViewModel que usa esta entidad para manejar el estado.
+
+---
+
+## EmergencyContactEntity.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.entity
@@ -365,17 +667,25 @@ data class EmergencyContactEntity(
 )
 ```
 
-### MedicationEntity.kt
+### Notas Importantes
 
-#### Descripcion General
+- Esta tabla está diseñada específicamente para guardar contactos a los que se pueda recurrir en caso de una emergencia médica.
+- A diferencia de otras entidades que pueden tener muchos campos, esta es intencionalmente simple: solo nombre y teléfono. En una emergencia, no se necesita más información.
+- Todas las propiedades tienen valores por defecto, lo que permite crear objetos sin tener que especificar todos los campos.
+- El sistema de IDs automáticos asegura que cada contacto tenga un identificador único sin que el usuario tenga que preocuparse por eso.
 
-Este archivo define la estructura de como se guardan los medicamentos en la base de datos del telefono. Es el molde mas completo de la aplicacion porque los medicamentos tienen mucha informacion asociada: el nombre, la dosis, las notas, los horarios, los dias de la semana y el progreso del tratamiento. Cada vez que el usuario agrega un nuevo medicamento, se crea un objeto de este tipo para almacenarlo.
+### Archivos Relacionados
 
-#### Ubicacion
+- `EmergencyContactDao.kt` — El DAO que usa esta entidad para las operaciones de base de datos. Tiene métodos como `insert()`, `delete()`, `getAllContacts()` y `deleteById()`.
+- `AppDatabase.kt` — La base de datos que incluye esta entidad en su lista de tablas.
+- `EmergencyContactRepository.kt` — El repositorio que maneja la lógica de negocio de los contactos de emergencia.
+- `FirebaseContactRepository.kt` — Para sincronizar los contactos de emergencia con la nube (Firebase).
+- `AgregarNumeroEmergencia.kt` — La pantalla donde el usuario agrega nuevos contactos de emergencia.
+- `EmergencyContactViewModel.kt` — El ViewModel que usa esta entidad para manejar el estado.
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.entity
+---
 
-#### Codigo Completo
+## MedicationEntity.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.entity
@@ -397,17 +707,80 @@ data class MedicationEntity(
 )
 ```
 
-### Medication.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define la estructura de cómo se guardan los medicamentos en la base de datos del teléfono. Es el molde más completo de la aplicación porque los medicamentos tienen mucha información asociada: el nombre, la dosis, las notas, los horarios, los días de la semana y el progreso del tratamiento.
 
-Este archivo define un modelo de datos simplificado para representar un medicamento en las capas superiores de la aplicacion. A diferencia de MedicationEntity, este modelo no tiene anotaciones de Room y esta pensado para usarse cuando se necesita una representacion mas ligera de un medicamento, por ejemplo en listas o vistas resumidas.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.entity`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.model
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades de la Entidad**
+
+`id: Int = 0` — La llave principal, identificador único de cada medicamento. Se genera automáticamente al guardar.
+
+`name: String = ""` — Almacena el nombre del medicamento. Ejemplos: `"Paracetamol"`, `"Amoxicilina 500mg"`, `"Ibuprofeno"`.
+
+`dose: String = ""` — Guarda la dosis o cantidad. Ejemplos: `"1 tableta"`, `"500 mg"`, `"2 cucharadas"`.
+
+`note: String = ""` — Almacena notas adicionales o instrucciones especiales. Ejemplos: `"Tomar después de los alimentos"`, `"Evitar exponerse al sol"`.
+
+`schedules: List<String> = emptyList()` — Guarda los horarios en los que se debe tomar el medicamento. Es una lista porque puede haber múltiples horarios al día. Los valores se guardan usando los convertidores de `Converters.kt`. Ejemplos: `["8:00 AM", "2:00 PM", "8:00 PM"]`.
+
+`days: List<String> = emptyList()` — Indica los días de la semana en que se debe tomar el medicamento. Ejemplos: `["lunes", "miércoles", "viernes"]`.
+
+`totalDays: Int = 0` — Representa la duración total del tratamiento en días. Ejemplos: `7` para una semana, `30` para un mes. Un valor de `0` podría significar que es un tratamiento continuo sin fecha de finalización.
+
+`daysTaken: Int = 0` — Lleva el conteo de cuántos días se ha tomado el medicamento. Este número aumenta cada vez que el usuario confirma que tomó el medicamento. Cuando `daysTaken` llega a ser igual a `totalDays`, el tratamiento está completo.
+
+**Cómo se Usa en la Práctica**
+
+Crear un nuevo medicamento:
+
+```kotlin
+val nuevoMedicamento = MedicationEntity(
+    name = "Amoxicilina",
+    dose = "500 mg",
+    note = "Tomar cada 12 horas, con alimentos",
+    schedules = listOf("8:00 AM", "8:00 PM"),
+    days = listOf("todos"),
+    totalDays = 7,
+    daysTaken = 0
+)
+```
+
+Actualizar el progreso:
+
+```kotlin
+val medicamentoActualizado = medicamento.copy(
+    daysTaken = medicamento.daysTaken + 1
+)
+medicationDao.updateMedication(medicamentoActualizado)
+```
+
+### Notas Importantes
+
+- Las propiedades `schedules` y `days` son listas que se convierten usando `Converters.kt` antes de guardarse en SQLite.
+- Cuando `totalDays` es 0, podría interpretarse como un tratamiento que no tiene fecha de finalización.
+- La combinación de `totalDays` y `daysTaken` permite mostrar barras de progreso y saber cuándo termina un tratamiento.
+- Los valores por defecto `emptyList()` para `schedules` y `days` son importantes porque evitan listas nulas que podrían causar errores.
+
+### Archivos Relacionados
+
+- `MedicationDao.kt` — El DAO con métodos como `insertMedication()`, `deleteMedication()`, `getAllMedications()` y `updateMedication()`.
+- `AppDatabase.kt` — La base de datos que incluye esta entidad.
+- `Converters.kt` — La clase que convierte las listas a texto para guardarlas.
+- `MedicationRepository.kt` — El repositorio que maneja la lógica de negocio.
+- `FirebaseMedicationRepository.kt` — Para sincronizar con la nube (Firebase).
+- `AddMedicationScreen.kt` — La pantalla donde el usuario agrega nuevos medicamentos.
+- `MedicamentosScreen.kt` — La pantalla donde se muestra la lista con su progreso.
+- `MedicationViewModel.kt` — El ViewModel que usa esta entidad para manejar el estado.
+
+---
+
+## Medication.kt (Model)
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.model
@@ -420,17 +793,52 @@ data class Medication(
 )
 ```
 
-### AppointmentRepository.kt
+**Posible Conversión entre Entity y Model**
 
-#### Descripcion General
+Es probable que en el código haya funciones para convertir de un tipo a otro:
 
-Este archivo define el repositorio de citas medicas, que actua como un puente entre la base de datos local y el resto de la aplicacion. Su trabajo es proporcionar una forma limpia y organizada de acceder a los datos de las citas sin que las otras partes de la aplicacion tengan que saber como estan guardados internamente.
+```kotlin
+// Convertir de Entity (base de datos) a Model (para mostrar)
+fun MedicationEntity.toMedicationModel(): Medication {
+    return Medication(
+        id = this.id,
+        name = this.name,
+        dose = this.dose,
+        hour = this.schedules.firstOrNull() ?: ""  // Toma el primer horario
+    )
+}
 
-#### Ubicacion
+// Convertir de Model a Entity (para guardar)
+fun Medication.toMedicationEntity(): MedicationEntity {
+    return MedicationEntity(
+        id = this.id,
+        name = this.name,
+        dose = this.dose,
+        note = "",
+        schedules = if (this.hour.isNotEmpty()) listOf(this.hour) else emptyList(),
+        days = emptyList(),
+        totalDays = 0,
+        daysTaken = 0
+    )
+}
+```
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.repository
+### Notas Importantes
 
-#### Codigo Completo
+- Este modelo es una versión simplificada de `MedicationEntity`. Pierde información como notas, días de la semana y el progreso del tratamiento.
+- Mientras que `MedicationEntity` permite múltiples horarios en una lista, `Medication` solo tiene un campo `hour` para un solo horario.
+- A diferencia de `MedicationEntity`, este modelo no tiene anotaciones de Room ni depende de la base de datos, lo que lo hace más ligero y fácil de usar en cualquier parte de la aplicación.
+- Todos los campos tienen valores por defecto, lo que permite crear objetos vacíos fácilmente.
+
+### Archivos Relacionados
+
+- `MedicationEntity.kt` — La versión completa para la base de datos.
+- Posibles pantallas donde se muestren listas simples de medicamentos.
+- Posibles ViewModels que manejen datos resumidos.
+
+---
+
+## AppointmentRepository.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.repository
@@ -453,17 +861,93 @@ class AppointmentRepository(
 }
 ```
 
-### EmergencyContactRepository.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el repositorio de citas médicas, que actúa como un puente entre la base de datos local y el resto de la aplicación. Su trabajo es proporcionar una forma limpia y organizada de acceder a los datos de las citas sin que las otras partes de la aplicación tengan que saber cómo están guardados internamente.
 
-Este archivo define el repositorio de contactos de emergencia, que actua como un intermediario entre la base de datos local y el resto de la aplicacion. Su funcion es proporcionar una forma organizada y limpia de acceder a los datos de los contactos de emergencia sin que las otras partes de la aplicacion tengan que saber como estan guardados internamente.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.repository`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.repository
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es un Repositorio?**
+
+Un repositorio es un patrón de diseño que separa la lógica de acceso a datos del resto de la aplicación. En lugar de que los ViewModels o las pantallas hablen directamente con el DAO, hablan con este repositorio. Esto tiene varias ventajas: organización, flexibilidad ante cambios futuros de fuente de datos, y mayor facilidad para las pruebas.
+
+**Constructor y Dependencias**
+
+```kotlin
+class AppointmentRepository(
+    private val appointmentDao: AppointmentDao
+)
+```
+
+El repositorio recibe el DAO por inyección de dependencias, lo que le permite usarlo sin tener que crearlo él mismo.
+
+**Métodos y su Función**
+
+`getAllAppointments()` — Obtiene todas las citas. Devuelve un `Flow<List<AppointmentEntity>>` que se actualiza automáticamente cuando hay cambios.
+
+`insertAppointment()` — Guarda una nueva cita. Es `suspend`, debe ejecutarse en segundo plano. Devuelve el `Long` que es el ID asignado.
+
+`deleteAppointment()` — Elimina una cita existente. También es `suspend`.
+
+**Flujo de Trabajo Típico**
+
+Ejemplo — Mostrar todas las citas:
+
+```kotlin
+class AppointmentViewModel(private val repository: AppointmentRepository) {
+    val allAppointments = repository.getAllAppointments()
+}
+
+val allAppointments by viewModel.allAppointments.collectAsState()
+```
+
+Ejemplo — Agregar una nueva cita:
+
+```kotlin
+fun addAppointment(place: String, dateTime: Long) {
+    viewModelScope.launch {
+        val newAppointment = AppointmentEntity(
+            place = place,
+            dateTime = dateTime
+        )
+        val newId = repository.insertAppointment(newAppointment)
+        Log.d("Appointment", "Cita guardada con ID: $newId")
+    }
+}
+```
+
+Ejemplo — Eliminar una cita:
+
+```kotlin
+fun deleteAppointment(appointment: AppointmentEntity) {
+    viewModelScope.launch {
+        repository.deleteAppointment(appointment)
+    }
+}
+```
+
+### Notas Importantes
+
+- Este repositorio es bastante simple porque solo pasa llamadas al DAO. En aplicaciones más complejas, aquí se podrían agregar validaciones o lógica de negocio.
+- Todos los métodos que modifican la base de datos son `suspend`, lo que obliga a llamarlos desde una corrutina.
+- El constructor recibe el DAO, lo que hace que el repositorio sea fácil de probar y de mantener.
+
+### Archivos Relacionados
+
+- `AppointmentDao.kt` — El DAO que este repositorio usa para acceder a la base de datos.
+- `AppointmentEntity.kt` — La entidad que representa una cita.
+- `AppDatabase.kt` — La base de datos que proporciona el DAO.
+- `FirebaseAppointmentRepository.kt` — Posible repositorio alternativo para la nube.
+- `AppointmentViewModel.kt` — El ViewModel que usa este repositorio.
+- `AgregarCita.kt` y `CitasMedicasScreen.kt` — Las pantallas que muestran y crean citas.
+
+---
+
+## EmergencyContactRepository.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.repository
@@ -490,17 +974,77 @@ class EmergencyContactRepository(
 }
 ```
 
-### FirebaseAppointmentRepository.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el repositorio de contactos de emergencia, que actúa como un intermediario entre la base de datos local y el resto de la aplicación. Su función es proporcionar una forma organizada y limpia de acceder a los datos de los contactos de emergencia.
 
-Este archivo define el repositorio de citas medicas que se sincroniza con Firebase, la base de datos en la nube de Google. A diferencia del AppointmentRepository que guarda las citas localmente en el telefono, este repositorio guarda la informacion en internet, lo que permite que los datos esten disponibles en cualquier dispositivo y no se pierdan si se desinstala la aplicacion o se cambia de telefono.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.repository`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.repository
+### Explicación Detallada
 
-#### Codigo Completo
+**Métodos y su Función**
+
+`getAllContacts()` — Obtiene todos los contactos. Devuelve un `Flow<List<EmergencyContactEntity>>` que se actualiza automáticamente.
+
+`insertContact()` — Guarda un nuevo contacto. Devuelve el `Long` que es el ID asignado.
+
+`deleteContact()` — Elimina un contacto usando el objeto completo.
+
+`deleteById()` — Elimina un contacto usando directamente su identificador, útil cuando solo se conoce el ID.
+
+**Flujo de Trabajo Típico**
+
+Ejemplo — Agregar un nuevo contacto:
+
+```kotlin
+fun addContact(name: String, phoneNumber: String) {
+    viewModelScope.launch {
+        val newContact = EmergencyContactEntity(
+            name = name,
+            phoneNumber = phoneNumber
+        )
+        val newId = repository.insertContact(newContact)
+        Log.d("EmergencyContact", "Contacto guardado con ID: $newId")
+    }
+}
+```
+
+Ejemplo — Eliminar un contacto:
+
+```kotlin
+fun deleteContact(contact: EmergencyContactEntity) {
+    viewModelScope.launch {
+        repository.deleteContact(contact)
+    }
+}
+
+fun deleteContactById(contactId: Long) {
+    viewModelScope.launch {
+        repository.deleteById(contactId)
+    }
+}
+```
+
+### Notas Importantes
+
+- Este repositorio ofrece dos métodos para eliminar contactos (`deleteContact` y `deleteById`), lo que da flexibilidad según lo que se tenga disponible.
+- Todos los métodos que modifican la base de datos son `suspend`.
+- Este repositorio solo maneja la base de datos local. Si hay un `FirebaseContactRepository`, sería para sincronizar con la nube.
+
+### Archivos Relacionados
+
+- `EmergencyContactDao.kt` — El DAO que este repositorio usa.
+- `EmergencyContactEntity.kt` — La entidad que representa un contacto.
+- `AppDatabase.kt` — La base de datos que proporciona el DAO.
+- `FirebaseContactRepository.kt` — Posible repositorio alternativo para la nube.
+- `EmergencyContactViewModel.kt` — El ViewModel que usa este repositorio.
+- `AgregarNumeroEmergencia.kt` — La pantalla donde se agregan nuevos contactos.
+
+---
+
+## FirebaseAppointmentRepository.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.repository
@@ -564,17 +1108,78 @@ class FirebaseAppointmentRepository {
 }
 ```
 
-### FirebaseContactRepository.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el repositorio de citas médicas que se sincroniza con Firebase. A diferencia del `AppointmentRepository` que guarda las citas localmente, este repositorio guarda la información en internet, permitiendo que los datos estén disponibles en cualquier dispositivo y no se pierdan si se desinstala la aplicación.
 
-Este archivo define el repositorio de contactos de emergencia que se sincroniza con Firebase, la base de datos en la nube de Google. A diferencia del EmergencyContactRepository que guarda los contactos localmente en el telefono, este repositorio guarda la informacion en internet, permitiendo que los contactos de emergencia esten disponibles en cualquier dispositivo y no se pierdan si se desinstala la aplicacion o se cambia de telefono.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.repository`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.repository
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades y Configuración**
+
+- `db`: La conexión a Firebase Firestore. `getInstance()` devuelve una instancia ya configurada.
+- `appointmentsCollection`: Referencia a la colección `"appointments"` en Firebase. Una colección es como una carpeta que contiene documentos, similar a una tabla en bases de datos tradicionales.
+
+**Métodos y su Función**
+
+`getAllAppointments()` — Usa `callbackFlow` para convertir el listener de Firestore en un `Flow` de Kotlin. Cada vez que hay cambios en la nube, Firebase avisa y la lista se actualiza automáticamente. `awaitClose` detiene la escucha cuando el `Flow` se cierra para ahorrar recursos.
+
+`insertAppointment()` — Guarda una nueva cita en Firebase. Convierte el ID de texto de Firebase a un número entero usando `hashCode()`. Si hay error, devuelve 0.
+
+`deleteAppointment()` — Busca en Firebase documentos que tengan el mismo lugar y fecha/hora que la cita a eliminar, asumiendo que no hay dos citas exactamente iguales.
+
+**Notas Importantes sobre el Código**
+
+*Sobre los IDs*:
+
+```kotlin
+doc.toObject(AppointmentEntity::class.java)?.copy(
+    id = doc.id.hashCode()
+)
+```
+
+Los IDs en Firebase son textos como `"ABC123xyz"`, pero la aplicación espera números enteros. Se usa `hashCode()` para convertirlos, aunque diferentes textos podrían generar el mismo número (es poco probable).
+
+*Sobre la eliminación*: La búsqueda por lugar y fecha asume que no hay dos citas exactamente iguales, lo cual es razonable.
+
+*Manejo de errores*: Todos los métodos tienen bloques `try/catch` que muestran el error en la consola y devuelven valores por defecto para evitar que la aplicación se cierre.
+
+**Flujo de Trabajo Típico**
+
+Ejemplo — Insertar una cita:
+
+```kotlin
+fun addAppointmentToCloud(place: String, dateTime: Long) {
+    viewModelScope.launch {
+        val appointment = AppointmentEntity(place = place, dateTime = dateTime)
+        val cloudId = firebaseRepo.insertAppointment(appointment)
+        if (cloudId != 0) {
+            showMessage("Cita guardada en la nube")
+        } else {
+            showError("No se pudo guardar en la nube")
+        }
+    }
+}
+```
+
+### Posibles Mejoras
+
+- **Mejor manejo de IDs**: En lugar de usar `hashCode()`, se podría modificar `AppointmentEntity` para aceptar IDs de texto.
+- **Eliminación por ID real**: Si se guardara el ID de Firebase en la entidad local, se podría eliminar directamente.
+- **Sincronización automática**: Combinar este repositorio con el local para guardar en ambos lugares automáticamente.
+
+### Archivos Relacionados
+
+- `AppointmentEntity.kt` — La entidad que se guarda en Firebase.
+- `AppointmentRepository.kt` — El repositorio local equivalente.
+- `AppointmentViewModel.kt` — Posible ViewModel que podría usar ambos repositorios.
+
+---
+
+## FirebaseContactRepository.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.repository
@@ -638,17 +1243,37 @@ class FirebaseContactRepository {
 }
 ```
 
-### FirebaseMedicationRepository.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el repositorio de contactos de emergencia que se sincroniza con Firebase. A diferencia del `EmergencyContactRepository`, este guarda la información en internet, permitiendo que los contactos estén disponibles en cualquier dispositivo.
 
-Este archivo define el repositorio de medicamentos que se sincroniza con Firebase. Permite guardar en la nube toda la informacion de los medicamentos que el usuario registra, incluyendo nombre, dosis, notas, horarios, dias y progreso del tratamiento.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.repository`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.repository
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades y Configuración**
+
+- `db`: La conexión a Firebase Firestore.
+- `contactsCollection`: Referencia a la colección `"contacts"` en Firebase.
+
+**Métodos y su Función**
+
+`getAllContacts()` — Escucha cambios en tiempo real en Firebase y emite listas actualizadas a través de un `Flow`. Cuando el `Flow` se cierra, deja de escuchar cambios para ahorrar recursos.
+
+`insertContact()` — Guarda un nuevo contacto en Firebase. Convierte el ID de texto a número usando `hashCode()`. Devuelve 0 si hay error.
+
+`deleteContact()` — Busca en Firebase documentos con el mismo nombre y teléfono que el contacto a eliminar. La búsqueda por nombre y teléfono es más precisa que buscar solo por nombre.
+
+### Archivos Relacionados
+
+- `EmergencyContactEntity.kt` — La entidad que se guarda en Firebase.
+- `EmergencyContactViewModel.kt` — El ViewModel que usa este repositorio.
+
+---
+
+## FirebaseMedicationRepository.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.repository
@@ -709,17 +1334,42 @@ class FirebaseMedicationRepository {
 }
 ```
 
-### MedicationRepository.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el repositorio de medicamentos que se sincroniza con Firebase. Permite guardar en la nube toda la información de los medicamentos, incluyendo nombre, dosis, notas, horarios, días y progreso del tratamiento.
 
-Este archivo define el repositorio local de medicamentos, que actua como un puente entre la base de datos local (Room) y el resto de la aplicacion. Es la version local que complementa al FirebaseMedicationRepository para la nube.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.repository`
 
-mx.edu.utng.aimc.com.pantallaprincipal.data.repository
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades y Configuración**
+
+Similar a los otros repositorios Firebase, se conecta a Firestore y apunta a la colección `"medications"`.
+
+**Métodos y su Función**
+
+`getAllMedications()` — Escucha cambios en la colección, convierte cada documento a `MedicationEntity` y emite listas actualizadas automáticamente.
+
+`insertMedication()` — Guarda un nuevo medicamento con todos sus campos (nombre, dosis, nota, `schedules`, `days`, `totalDays`, `daysTaken`).
+
+`deleteMedication()` — Usa solo el nombre del medicamento para encontrar el documento a eliminar. Esto podría causar problemas si existen dos medicamentos con el mismo nombre.
+
+### Notas Importantes
+
+- Para eliminar solo usa el nombre, lo que podría causar problemas con medicamentos de nombre repetido.
+- No tiene método de actualización directa, solo insertar y eliminar.
+- Guarda todos los campos, incluyendo las listas `schedules` y `days`.
+
+### Archivos Relacionados
+
+- `MedicationEntity.kt` — La entidad que se guarda en Firebase.
+- `MedicationViewModel.kt` — El ViewModel que usa este repositorio.
+
+---
+
+## MedicationRepository.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.repository
@@ -727,7 +1377,6 @@ package mx.edu.utng.aimc.com.pantallaprincipal.data.repository
 import kotlinx.coroutines.flow.Flow
 import mx.edu.utng.aimc.com.pantallaprincipal.data.dao.MedicationDao
 import mx.edu.utng.aimc.com.pantallaprincipal.data.entity.MedicationEntity
-
 
 class MedicationRepository(private val dao: MedicationDao) {
 
@@ -747,17 +1396,42 @@ class MedicationRepository(private val dao: MedicationDao) {
 }
 ```
 
-### NavGraph.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el repositorio local de medicamentos, que actúa como un puente entre la base de datos local (Room) y el resto de la aplicación. Es la versión local que complementa al `FirebaseMedicationRepository` para la nube.
 
-Este archivo define el sistema de navegacion de toda la aplicacion. Es como el mapa que conecta todas las pantallas entre si, permitiendo al usuario moverse de una pantalla a otra de manera organizada. Tambien se encarga de crear y proporcionar los ViewModels y repositorios que las pantallas necesitan para funcionar.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.data.repository`
 
-mx.edu.utng.aimc.com.pantallaprincipal.navigation
+### Explicación Detallada
 
-#### Codigo Completo
+**Métodos y su Función**
+
+`getAllMedications()` — Obtiene todos los medicamentos con actualizaciones en tiempo real gracias al `Flow` del DAO.
+
+`insertMedication()` — Guarda un nuevo medicamento. Devuelve un `Long` con el ID asignado, valor crucial para el ViewModel.
+
+`deleteMedication()` — Elimina un medicamento de la base de datos local.
+
+`updateMedication()` — Actualiza un medicamento existente. Este método es exclusivo del repositorio local, ya que el repositorio de Firebase no tiene actualización directa.
+
+### Notas Importantes
+
+- Es el único repositorio con método `updateMedication`.
+- Devuelve `Long` en lugar de `Int` para el ID.
+- Trabaja directamente con Room y la base de datos local.
+
+### Archivos Relacionados
+
+- `MedicationDao.kt` — El DAO local.
+- `MedicationEntity.kt` — La entidad de medicamentos.
+- `FirebaseMedicationRepository.kt` — El repositorio equivalente para la nube.
+- `MedicationViewModel.kt` — El ViewModel que usa este repositorio.
+
+---
+
+## NavGraph.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.navigation
@@ -901,17 +1575,78 @@ fun NavGraph() {
 }
 ```
 
-### AlarmReceiver.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el sistema de navegación de toda la aplicación. Es como el mapa que conecta todas las pantallas entre sí, permitiendo al usuario moverse de una pantalla a otra de manera organizada. También se encarga de crear y proporcionar los ViewModels y repositorios que las pantallas necesitan.
 
-Este archivo define el AlarmReceiver, que es un componente especial de Android que escucha las alarmas programadas y responde cuando estas se activan. Es como un despertador que, cuando llega la hora, se encarga de mostrar una notificacion para recordarle al usuario que debe tomar su medicamento y tambien maneja las acciones que el usuario realiza sobre esa notificacion.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.navigation`
 
-mx.edu.utng.aimc.com.pantallaprincipal.receivers
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es NavGraph?**
+
+`NavGraph` define todas las rutas disponibles (cada pantalla tiene una ruta única como `"home"`, `"citas"`, `"addMedication"`) y cómo navegar entre ellas. También inicializa los componentes que las pantallas necesitan: base de datos, repositorios y ViewModels.
+
+**Componentes Principales**
+
+`navController` — Maneja las transiciones entre pantallas. `navController.navigate("ruta")` lleva al usuario a esa pantalla; `navController.popBackStack()` regresa a la pantalla anterior.
+
+`NavHost` — Contenedor que muestra la pantalla actual según la ruta activa. Sus parámetros clave son `navController` y `startDestination` (en este caso `"home"`).
+
+**Inicialización de Dependencias**
+
+```kotlin
+val application = context.applicationContext as Application
+val database = AppDatabase.getDatabase(application)
+```
+
+```kotlin
+val medicationRepository = MedicationRepository(database.medicationDao())
+val appointmentRepository = AppointmentRepository(database.appointmentDao())
+val emergencyContactRepository = EmergencyContactRepository(database.emergencyContactDao())
+```
+
+Los ViewModels se crean con fábricas porque algunos necesitan el `Application` context para programar alarmas.
+
+**Configuración del Tema**
+
+```kotlin
+val themePreferences = remember { ThemePreferences(context) }
+val scope = rememberCoroutineScope()
+val isDarkTheme by themePreferences.isDarkTheme.collectAsState(initial = false)
+```
+
+**Navegación entre Pantallas**
+
+- Hacia adelante: `navController.navigate("medicationList")`
+- Hacia atrás: `navController.popBackStack()`
+
+### Flujo de Trabajo Típico
+
+1. El usuario abre la app: `NavHost` muestra `"home"`.
+2. El usuario toca "Medicamentos": navega a `"medicationList"`.
+3. `MedicationListScreen` recibe el `medicationViewModel` ya creado.
+4. El usuario toca "Agregar": navega a `"addMedication"`.
+5. Al guardar: `navController.popBackStack()` regresa a la lista.
+
+### Notas Importantes
+
+- Todos los ViewModels se crean en `NavGraph` y se pasan a las pantallas, asegurando que los datos persistan mientras se navega.
+- Se crean `medicationRepository`, `appointmentRepository` y `emergencyContactRepository` pero no se usan directamente; es código preparado para futuras funcionalidades.
+- Hay dos rutas para medicamentos (`"medicamentos"` y `"medicationList"`), lo que podría ser redundante o preparado para diferentes vistas.
+
+### Archivos Relacionados
+
+- Todas las pantallas en `ui/screens/`.
+- Todos los ViewModels y sus fábricas en `viewmodel/`.
+- `ThemePreferences.kt` en `utils/`.
+- `AppDatabase.kt` y los repositorios en `data/`.
+
+---
+
+## AlarmReceiver.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.receivers
@@ -947,6 +1682,11 @@ class AlarmReceiver : BroadcastReceiver() {
     }
 
     private fun markMedicationAsTaken(context: Context, medId: Int) {
+        // TODO: Implementar la lógica para actualizar tu base de datos
+        // Por ejemplo, usando un Repository o un ContentProvider
+        // repository.markAsTaken(medId)
+
+        // Por ahora, solo un log
         android.util.Log.d("AlarmReceiver", "Medicamento $medId marcado como tomado")
     }
 
@@ -957,17 +1697,86 @@ class AlarmReceiver : BroadcastReceiver() {
 }
 ```
 
-### AgregarCita.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define el `AlarmReceiver`, que es un componente especial de Android que escucha las alarmas programadas y responde cuando estas se activan. Es como un despertador que, cuando llega la hora, se encarga de mostrar una notificación para recordarle al usuario que debe tomar su medicamento, y también maneja las acciones que el usuario realiza sobre esa notificación.
 
-Este archivo define la pantalla para agregar una nueva cita medica. Es un formulario simple donde el usuario puede ingresar el lugar de la cita y la fecha y hora. Al presionar el boton Aceptar, la informacion se envia de vuelta a la pantalla anterior.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.receivers`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.citas
+### Explicación Detallada
 
-#### Codigo Completo
+**¿Qué es un BroadcastReceiver?**
+
+Un `BroadcastReceiver` es un componente de Android que puede escuchar mensajes (llamados "broadcasts") que el sistema o las aplicaciones envían. `AlarmReceiver` escucha dos tipos de mensajes: cuando es hora de tomar un medicamento, y cuando el usuario toca el botón "Tomado" en la notificación.
+
+**Constantes de Acción**
+
+- `ACTION_MEDICATION_ALARM`: Indica que es hora de tomar un medicamento.
+- `ACTION_MARK_TAKEN`: Indica que el usuario marcó el medicamento como tomado.
+
+**Flujo de Trabajo**
+
+*Caso 1: Es hora de tomar el medicamento*
+
+```kotlin
+ACTION_MEDICATION_ALARM -> {
+    val medName = intent.getStringExtra("medName") ?: "Medicamento Desconocido"
+    val medId = intent.getIntExtra("medId", -1)
+
+    if (medId != -1) {
+        NotificationHelper(context).showMedicationNotification(medName, medId)
+    }
+}
+```
+
+Extrae el nombre y el ID del medicamento del `Intent` y muestra la notificación si el ID es válido.
+
+*Caso 2: El usuario marcó "Tomado"*
+
+```kotlin
+ACTION_MARK_TAKEN -> {
+    val medId = intent.getIntExtra("medId", -1)
+    if (medId != -1) {
+        markMedicationAsTaken(context, medId)
+        cancelNotification(context, medId)
+    }
+}
+```
+
+Extrae el ID, llama a `markMedicationAsTaken()` para actualizar la base de datos y cancela la notificación.
+
+**Métodos Auxiliares**
+
+`markMedicationAsTaken(context, medId)` — Método incompleto (tiene TODO). Por ahora solo registra un mensaje en la consola. Lo que debería hacer: conectar con el repositorio de medicamentos y actualizar el contador `daysTaken`.
+
+`cancelNotification(context, notificationId)` — Obtiene el `NotificationManager` del sistema y cancela la notificación con ese ID específico.
+
+**Flujo Completo de una Alarma**
+
+1. En `AlarmUtils.kt` se programa una alarma con un `Intent` que incluye el nombre e ID del medicamento.
+2. Cuando llega la hora, Android ejecuta `onReceive()` con ese `Intent`.
+3. El receptor muestra la notificación usando `NotificationHelper`.
+4. La notificación tiene un botón "Tomado". Al tocarlo, se envía otro broadcast con `ACTION_MARK_TAKEN`.
+5. El receptor recibe este broadcast, intenta marcar el medicamento como tomado y cancela la notificación.
+
+### Notas Importantes
+
+- La función `markMedicationAsTaken` está incompleta. Es necesario implementar la lógica que actualice la base de datos.
+- Se usa `-1` como valor por defecto para el ID del medicamento. Si llega `-1`, el receptor no hace nada.
+- Las acciones `ACTION_MEDICATION_ALARM` y `ACTION_MARK_TAKEN` están definidas en otro archivo, lo que centraliza las constantes y evita errores de escritura.
+
+### Archivos Relacionados
+
+- `NotificationHelper.kt` — La clase que construye y muestra las notificaciones.
+- `AlarmUtils.kt` — Contiene funciones para programar las alarmas.
+- `MedicationRepository.kt` — Debería usarse para implementar el `markMedicationAsTaken` pendiente.
+- `MedicationEntity.kt` — La entidad que se actualizaría cuando se marca como tomado.
+
+---
+
+## AgregarCita.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.citas
@@ -1020,7 +1829,7 @@ fun AgregarCita(onAceptarClick: () -> Unit = {}) {
             OutlinedTextField(
                 value = fechaHora,
                 onValueChange = { fechaHora = it },
-                label = { Text("Fecha y hora") },
+                label = { Text("📅 Fecha y hora") },
                 placeholder = { Text("dd/mm/aaaa - hh:mm") },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp)
@@ -1041,17 +1850,28 @@ fun AgregarCita(onAceptarClick: () -> Unit = {}) {
 }
 ```
 
-### CitasMedicasScreen.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define la pantalla para agregar una nueva cita médica. Es un formulario simple donde el usuario puede ingresar el lugar de la cita y la fecha y hora. Al presionar el botón "Aceptar", la información se envía de vuelta a la pantalla anterior.
 
-Este archivo contiene la pantalla principal de citas medicas, donde el usuario puede ver todas sus citas programadas, agregar nuevas citas y eliminar citas existentes. Es una pantalla completa con lista interactiva y dialogos para agregar citas con selector de fecha y hora.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.citas`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.citas
+### Explicación Detallada
 
-#### Codigo Completo
+**AgregarCita()**
+
+Muestra una tarjeta con un formulario para agregar una nueva cita médica.
+
+- Parámetros: `onAceptarClick` — Función que se ejecuta al presionar "Aceptar". Por defecto no hace nada.
+- Componentes: Título "Agregar Cita", campo "Lugar", campo "Fecha y hora" y botón "Aceptar" verde.
+- Características visuales: La tarjeta tiene fondo gris claro (#F5F5F5), bordes redondeados de 16dp y sombra de 8dp.
+- Limitaciones: Este formulario no valida que los campos estén llenos; el usuario puede presionar "Aceptar" incluso si los campos están vacíos.
+
+---
+
+## CitasMedicasScreen.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.citas
@@ -1110,7 +1930,7 @@ fun CitasMedicasScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Citas Medicas") },
+                title = { Text("Citas Médicas") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
@@ -1221,17 +2041,12 @@ fun AppointmentCard(
                         ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
-                        text = "🏥",
-                        fontSize = 32.sp
-                    )
+                    Text(text = "🏥", fontSize = 32.sp)
                 }
 
                 Spacer(modifier = Modifier.width(16.dp))
 
-                Column(
-                    modifier = Modifier.weight(1f)
-                ) {
+                Column(modifier = Modifier.weight(1f)) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth()
@@ -1361,7 +2176,7 @@ fun AddAppointmentDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Agregar Nueva Cita Medica") },
+        title = { Text("Agregar Nueva Cita Médica") },
         text = {
             Column(
                 modifier = Modifier.padding(top = 16.dp),
@@ -1419,17 +2234,45 @@ fun AddAppointmentDialog(
 }
 ```
 
-### ConfiguracionScreen.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo contiene la pantalla principal de citas médicas, donde el usuario puede ver todas sus citas programadas, agregar nuevas y eliminar citas existentes. Es una pantalla completa con lista interactiva y diálogos para agregar citas con selector de fecha y hora.
 
-Este archivo contiene la pantalla de configuracion de la aplicacion. Permite al usuario personalizar su experiencia ajustando preferencias como notificaciones, tema de colores (claro/oscuro) y gestionar contactos de emergencia. Tambien incluye un boton directo para llamar al 911 y una lista de contactos de emergencia guardados.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.citas`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.configuracion
+### Explicación Detallada
 
-#### Codigo Completo
+**CitasMedicasScreen()**
+
+Pantalla principal de citas médicas con lista interactiva.
+
+- Parámetros: `onBack` — para regresar; `viewModel` — maneja los datos de las citas.
+- Componentes: `TopAppBar` con título, botón de retroceso y botón "Agregar"; lista de citas con `AppointmentCard`; mensaje de estado vacío.
+- Flujo de datos: Usa `LaunchedEffect` para recolectar las citas del ViewModel. La lista se actualiza automáticamente al agregar o eliminar.
+
+**AppointmentCard()**
+
+Muestra una tarjeta individual para cada cita con diseño llamativo.
+
+- Fondo verde menta suave (#E8F5E9) con círculos decorativos dibujados con `Canvas`.
+- Incluye ícono de hospital, nombre del lugar, fecha y hora formateada, y botón de eliminar (rojo).
+
+**AddAppointmentDialog()**
+
+Diálogo para agregar una nueva cita. El campo de fecha y hora abre primero un `DatePickerDialog` y luego un `TimePickerDialog`. El botón "Aceptar" solo se habilita cuando el campo "Lugar" no está vacío.
+
+### Flujo de Trabajo
+
+1. Usuario presiona "Agregar" → se abre `AddAppointmentDialog`.
+2. Usuario llena datos y presiona "Aceptar" → se crea `AppointmentEntity` y se inserta vía ViewModel.
+3. La lista se actualiza automáticamente.
+4. Usuario presiona el botón rojo en una tarjeta → se llama a `viewModel.deleteAppointment()`.
+
+---
+
+## ConfiguracionScreen.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.configuracion
@@ -1481,7 +2324,7 @@ fun ConfiguracionScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Configuracion") },
+                title = { Text("Configuración") },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
@@ -1750,7 +2593,7 @@ fun AddEmergencyContactDialog(
                 OutlinedTextField(
                     value = phone,
                     onValueChange = { phone = it },
-                    label = { Text("Numero de telefono") },
+                    label = { Text("Número de teléfono") },
                     leadingIcon = {
                         Icon(Icons.Default.Phone, contentDescription = null)
                     },
@@ -1775,17 +2618,50 @@ fun AddEmergencyContactDialog(
 }
 ```
 
-### AgregarNumeroEmergencia.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo contiene la pantalla de configuración de la aplicación. Permite al usuario personalizar su experiencia ajustando notificaciones, tema de colores y gestionar contactos de emergencia.
 
-Este archivo define una pantalla simple para agregar un numero de contacto de emergencia. Es un formulario basico con dos campos (nombre y numero) y un boton rojo para guardar. A diferencia de la pantalla de configuracion que tambien tiene funcionalidad de contactos, esta parece ser una pantalla independiente especifica para esta tarea.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.configuracion`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.emergencia
+### Explicación Detallada
 
-#### Codigo Completo
+**ConfiguracionScreen()**
+
+Pantalla con tres secciones en una lista vertical: Notificaciones, Tema de apariencia y Contactos de emergencia.
+
+- Parámetros: `onBackClick`, `onThemeChange`, `isDarkTheme`, `emergencyViewModel`.
+- Colores dinámicos: `backgroundColor`, `textColor` y `cardColor` cambian según el tema activo.
+
+**Secciones de Configuración**
+
+*Sección Notificaciones* — Switch para activar/desactivar notificaciones. Actualmente solo cambia visualmente; no tiene funcionalidad real implementada.
+
+*Sección Tema de Apariencia* — Switch que cambia entre tema claro y oscuro. Al cambiar, ejecuta `onThemeChange()` para notificar al componente padre (`NavGraph`), lo que actualiza el tema en toda la aplicación.
+
+*Sección Contactos de Emergencia* — Incluye un botón rojo que abre el marcador con el número 911, lista de contactos guardados con opciones de llamar y eliminar, y botón "+" para agregar nuevos.
+
+**EmergencyContactItem()**
+
+Muestra un contacto individual con nombre, número y botones de llamada (verde) y eliminar (rojo).
+
+**AddEmergencyContactDialog()**
+
+Diálogo para agregar un nuevo contacto con campos de nombre y teléfono. El botón "Guardar" solo se habilita cuando ambos campos tienen texto.
+
+### Flujo de Trabajo
+
+Cambiar tema: El switch actualiza `temaOscuro` localmente → llama a `onThemeChange()` → `NavGraph` actualiza el tema global → la pantalla se recolorea automáticamente.
+
+Agregar contacto: Botón "+" → diálogo → usuario ingresa datos → "Guardar" → `emergencyViewModel.insertContact()` → lista se actualiza automáticamente.
+
+Llamar a un contacto: Botón verde → `Intent` con `ACTION_DIAL` → Android abre el marcador con el número.
+
+---
+
+## AgregarNumeroEmergencia.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.emergencia
@@ -1822,7 +2698,7 @@ fun AgregarNumeroEmergencia(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
-                text = "Agregar numero de emergencia",
+                text = "Agregar número de emergencia",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black
@@ -1839,7 +2715,7 @@ fun AgregarNumeroEmergencia(
             OutlinedTextField(
                 value = numero,
                 onValueChange = { numero = it },
-                label = { Text("Numero de contacto") },
+                label = { Text("Número de contacto") },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp)
             )
@@ -1859,17 +2735,28 @@ fun AgregarNumeroEmergencia(
 }
 ```
 
-### FarmaciasCercanasScreen.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define una pantalla simple para agregar un número de contacto de emergencia. Es un formulario básico con dos campos (nombre y número) y un botón rojo para guardar.
 
-Este archivo contiene la pantalla para buscar farmacias cercanas a la ubicacion del usuario. Es una de las pantallas mas complejas de la aplicacion porque integra varias tecnologias: permisos de ubicacion, Google Maps, y llamadas a la API de Google Places para obtener farmacias reales. La pantalla se divide en dos partes: un mapa en la mitad superior y una lista de farmacias en la mitad inferior.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.emergencia`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.farmacias
+### Explicación Detallada
 
-#### Codigo Completo
+**AgregarNumeroEmergencia()**
+
+Muestra una tarjeta con un formulario para agregar un nuevo contacto de emergencia.
+
+- Parámetros: `onAgregar` — Función que recibe `nombre` y `numero` cuando el usuario presiona "Agregar". Por defecto es una función vacía.
+- Variables de estado: `nombre` y `numero` almacenan el texto que el usuario escribe en cada campo.
+- Botón rojo (#D32F2F) que ocupa todo el ancho. Al presionarlo, ejecuta `onAgregar` con los valores actuales.
+- No tiene validación: se puede presionar incluso si los campos están vacíos.
+
+---
+
+## FarmaciasCercanasScreen.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.farmacias
@@ -1998,7 +2885,7 @@ fun FarmaciasCercanasScreen(
                                     tint = MaterialTheme.colorScheme.primary
                                 )
                                 Text(
-                                    "Se necesita permiso de ubicacion",
+                                    "Se necesita permiso de ubicación",
                                     style = MaterialTheme.typography.titleMedium
                                 )
                                 Button(onClick = { locationPermissionState.launchPermissionRequest() }) {
@@ -2074,7 +2961,7 @@ fun GoogleMapView(
     ) {
         Marker(
             state = MarkerState(position = userLocation),
-            title = "Tu ubicacion"
+            title = "Tu ubicación"
         )
 
         farmacias.forEach { farmacia ->
@@ -2126,7 +3013,7 @@ fun FarmaciaCard(
             IconButton(onClick = onNavigate) {
                 Icon(
                     Icons.Default.Directions,
-                    contentDescription = "Como llegar",
+                    contentDescription = "Cómo llegar",
                     tint = MaterialTheme.colorScheme.primary
                 )
             }
@@ -2161,7 +3048,7 @@ suspend fun obtenerFarmaciasReales(
             val item = results.getJSONObject(i)
 
             val name = item.optString("name", "Farmacia desconocida")
-            val address = item.optString("vicinity", "Sin direccion")
+            val address = item.optString("vicinity", "Sin dirección")
 
             val location = item.getJSONObject("geometry").getJSONObject("location")
             val lat = location.getDouble("lat")
@@ -2181,17 +3068,69 @@ suspend fun obtenerFarmaciasReales(
 }
 ```
 
-### MediAlertaScreen.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo contiene la pantalla para buscar farmacias cercanas a la ubicación del usuario. Integra permisos de ubicación, Google Maps y la API de Google Places para obtener farmacias reales. La pantalla se divide en dos partes: un mapa en la mitad superior y una lista de farmacias en la mitad inferior.
 
-Este archivo contiene la pantalla principal de la aplicacion, llamada MediAlerta. Es la primera pantalla que ve el usuario y funciona como un menu de navegacion central. Desde aqui puede acceder a todas las funciones principales de la aplicacion: medicamentos, citas medicas, farmacias cercanas y configuracion. Tambien incluye un boton destacado de emergencia para llamar al 911.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.farmacias`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.home
+### Explicación Detallada
 
-#### Codigo Completo
+**Modelo de Datos Farmacia**
+
+```kotlin
+data class Farmacia(
+    val nombre: String,
+    val direccion: String,
+    val distancia: String,
+    val latLng: LatLng
+)
+```
+
+Representa una farmacia. El campo `distancia` está preparado pero no se usa actualmente (siempre vacío).
+
+**FarmaciasCercanasScreen()**
+
+Pantalla principal que solicita permiso de ubicación, obtiene la última ubicación conocida y llama a la API de Google Places con un radio de 40 kilómetros y el filtro `type=pharmacy`.
+
+La API Key está hardcodeada en el código, lo cual no es una práctica segura:
+
+```kotlin
+val API_KEY = "AIzaSyAUdfxCL1xKk66Ai8GcMET6fS1dyUH9pOk"
+```
+
+**GoogleMapView()**
+
+Muestra un mapa centrado en la ubicación del usuario (zoom 14f) con marcadores verdes (`HUE_GREEN`) para las farmacias y marcador por defecto para el usuario.
+
+**FarmaciaCard()**
+
+Tarjeta con ícono de farmacia, nombre, dirección y botón de navegación. Al presionar "Cómo llegar", abre Google Maps en modo navegación:
+
+```kotlin
+val uri = Uri.parse("google.navigation:q=${farmacia.latLng.latitude},${farmacia.latLng.longitude}")
+val intent = Intent(Intent.ACTION_VIEW, uri).apply {
+    setPackage("com.google.android.apps.maps")
+}
+```
+
+**obtenerFarmaciasReales()**
+
+Función suspendida que llama a la API de Places con `OkHttpClient`, parsea la respuesta JSON y retorna una lista de objetos `Farmacia`.
+
+### Flujo de Trabajo
+
+1. La pantalla solicita permiso de ubicación.
+2. Al concederse, obtiene la última ubicación conocida.
+3. Llama a la API de Places y recibe farmacias en un radio de 40 km.
+4. El mapa muestra marcadores; la lista muestra la información de cada farmacia.
+5. Al tocar "Cómo llegar", se abre Google Maps con la ruta.
+
+---
+
+## MediAlertaScreen.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.home
@@ -2338,7 +3277,7 @@ fun MediAlertaScreen(
                     )
 
                     PrettyCard(
-                        title = "Configuracion",
+                        title = "Configuración",
                         color = Green,
                         borderColor = GreenBorder,
                         icon = Icons.Default.Settings,
@@ -2350,7 +3289,7 @@ fun MediAlertaScreen(
 
         Image(
             painter = painterResource(id = R.drawable.estetoscopio),
-            contentDescription = "Ilustracion fondo",
+            contentDescription = "Ilustración fondo",
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .size(250.dp)
@@ -2405,17 +3344,46 @@ fun PrettyCard(
 }
 ```
 
-### AddMedicationScreen.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo contiene la pantalla principal de la aplicación. Desde aquí el usuario puede acceder a todas las funciones principales: medicamentos, citas médicas, farmacias cercanas y configuración. También incluye un botón destacado de emergencia para llamar al 911.
 
-Esta pantalla permite al usuario agregar un nuevo medicamento a la aplicacion. Es un formulario completo que recolecta toda la informacion necesaria: nombre, dosis, notas, dias de la semana, horarios y duracion del tratamiento. Tambien incluye la funcionalidad para programar recordatorios.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.home`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos
+### Explicación Detallada
 
-#### Codigo Completo
+**MediAlertaScreen()**
+
+Pantalla de inicio con el nombre de la aplicación, un botón de emergencia destacado, cuatro tarjetas de navegación y una imagen decorativa en la parte inferior.
+
+- Parámetros (todos opcionales): `onNavigateToMedicamentos`, `onNavigateToMedicationList`, `onNavigateToCitas`, `onNavigateToFarmacias`, `onNavigateToConfiguracion`.
+- Nota: Hay dos callbacks para medicamentos (`onNavigateToMedicamentos` y `onNavigateToMedicationList`), pero solo se usa `onNavigateToMedicationList` en la tarjeta.
+
+**Componentes de la Pantalla**
+
+*Título y Subtítulo* — "MediAlerta" en morado oscuro (40sp, negritas) y subtítulo "Tu salud en tus manos" en morado más claro.
+
+*Botón de Emergencia 911* — Botón rojo que ocupa el 85% del ancho, con sombra pronunciada (12dp). Al presionarlo abre el marcador telefónico con el número 911 ya marcado.
+
+*Tarjetas de Navegación* — Cuatro tarjetas en dos filas: Medicamentos (rosa), Citas (púrpura), Farmacias (amarillo) y Configuración (verde). Cada tarjeta tiene borde de 3dp, sombra de 8dp, esquinas redondeadas de 20dp, ícono blanco de 38dp y toda la tarjeta es clicable.
+
+*Imagen Decorativa* — Imagen de un estetoscopio (`res/drawable/estetoscopio.png`), semi-transparente (alpha 0.9), alineada en la parte inferior central.
+
+**PrettyCard()**
+
+Componente reutilizable para las tarjetas de navegación. Recibe `icon`, `title`, `color`, `borderColor` y `onClick`.
+
+### Flujo de Trabajo
+
+1. Usuario abre la aplicación → llega a esta pantalla.
+2. Presionar "Emergencia 911" → abre el marcador con el 911.
+3. Presionar cualquier tarjeta → navega a la sección correspondiente.
+
+---
+
+## AddMedicationScreen.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos
@@ -2426,7 +3394,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -2509,7 +3476,7 @@ fun AddMedicationScreen(
                 OutlinedTextField(
                     value = medNote,
                     onValueChange = { medNote = it },
-                    label = { Text("Descripcion o nota") },
+                    label = { Text("Descripción o nota") },
                     modifier = Modifier.fillMaxWidth()
                 )
             }
@@ -2518,13 +3485,13 @@ fun AddMedicationScreen(
                 OutlinedTextField(
                     value = medTotalDays,
                     onValueChange = { medTotalDays = it },
-                    label = { Text("Durante cuantos dias lo tomara?") },
+                    label = { Text("¿Durante cuántos días lo tomará?") },
                     modifier = Modifier.fillMaxWidth()
                 )
             }
 
             item {
-                Text("Dias de la semana:", style = MaterialTheme.typography.titleMedium)
+                Text("Días de la semana:", style = MaterialTheme.typography.titleMedium)
             }
 
             item {
@@ -2611,17 +3578,37 @@ fun AddMedicationScreen(
 }
 ```
 
-### MedicamentosScreen.kt
+### Descripción General
 
-#### Descripcion General
+Esta pantalla permite al usuario agregar un nuevo medicamento. Es un formulario completo que recolecta nombre, dosis, notas, días de la semana, horarios y duración del tratamiento.
 
-Esta pantalla muestra la lista de medicamentos activos con su progreso de tratamiento. Cada medicamento tiene una barra de progreso y un boton para marcar que ya se tomo la dosis.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos
+### Explicación Detallada
 
-#### Codigo Completo
+**AddMedicationScreen()**
+
+- Parámetros: `viewModel`, `onBack`, `onNavigateToNotification`.
+- Variables de estado: `medName`, `medDose`, `medNote`, `medTotalDays`, `scheduleList`, `selectedDays`.
+
+**Campos del Formulario**
+
+1. Nombre del medicamento — campo de texto obligatorio.
+2. Dosis / Cantidad — campo de texto para la dosis.
+3. Descripción o nota — campo para instrucciones especiales.
+4. Duración en días — campo de texto para los días totales.
+5. Días de la semana — `FilterChip` para selección múltiple: Lun, Mar, Mie, Jue, Vie, Sab, Dom.
+6. Horarios — botón "+" que abre `TimePickerDialog`. Cada horario agregado aparece en una tarjeta con opción de eliminar.
+
+**openTimePicker()** — Abre el selector de hora nativo. Al seleccionar una hora, la agrega a `scheduleList` con formato `"HH:mm"`.
+
+**Botón Guardar** — Solo se habilita si el nombre no está vacío, hay al menos un horario, al menos un día y el campo de días totales no está vacío. Al guardar, llama a `viewModel.insertMedication()` y navega a la pantalla de notificación.
+
+---
+
+## MedicamentosScreen.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos
@@ -2685,7 +3672,7 @@ fun MedicationCard(
             LinearProgressIndicator(progress = progress, modifier = Modifier.fillMaxWidth())
 
             Text(
-                text = "${med.daysTaken} / ${med.totalDays} dias",
+                text = "${med.daysTaken} / ${med.totalDays} días",
                 style = MaterialTheme.typography.bodyMedium
             )
 
@@ -2695,24 +3682,36 @@ fun MedicationCard(
                 onClick = onTaken,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Ya la tome")
+                Text("Ya la tomé")
             }
         }
     }
 }
 ```
 
-### MedicationListScreen.kt
+### Descripción General
 
-#### Descripcion General
+Esta pantalla muestra la lista de medicamentos activos con su progreso de tratamiento. Cada medicamento tiene una barra de progreso y un botón para marcar que ya se tomó la dosis.
 
-Esta es la pantalla principal de lista de medicamentos, con un diseño mas elaborado y atractivo. Muestra todos los medicamentos registrados con su informacion detallada y opcion de eliminar.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos
+### Explicación Detallada
 
-#### Codigo Completo
+**MedicamentosScreen()**
+
+Observa `allMedications` del ViewModel con `collectAsState` y muestra cada medicamento con `MedicationCard`.
+
+**MedicationCard() (versión simple)**
+
+Tarjeta individual con nombre (con emoji 💊), dosis, notas, barra de progreso lineal, texto "días tomados / días totales" y botón "Ya la tomé".
+
+Lógica del botón: Llama a `viewModel.markMedicationTaken(med)`. Si `daysTaken + 1 >= totalDays`, elimina automáticamente el medicamento.
+
+---
+
+## MedicationListScreen.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos
@@ -2874,10 +3873,7 @@ fun MedicationCard(
                                 ),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(
-                                text = "💊",
-                                fontSize = 24.sp
-                            )
+                            Text(text = "💊", fontSize = 24.sp)
                         }
 
                         Spacer(modifier = Modifier.width(12.dp))
@@ -2936,7 +3932,7 @@ fun MedicationCard(
 
                 MedicationInfoRow(
                     icon = "📅",
-                    label = "Dias",
+                    label = "Días",
                     value = medication.days.joinToString(", ")
                 )
             }
@@ -2963,10 +3959,7 @@ fun MedicationInfoRow(
                 ),
             contentAlignment = Alignment.Center
         ) {
-            Text(
-                text = icon,
-                fontSize = 18.sp
-            )
+            Text(text = icon, fontSize = 18.sp)
         }
 
         Spacer(modifier = Modifier.width(12.dp))
@@ -2989,17 +3982,36 @@ fun MedicationInfoRow(
 }
 ```
 
-### NotificacionMedicamento.kt
+### Descripción General
 
-#### Descripcion General
+Esta es la pantalla principal de lista de medicamentos, con un diseño más elaborado y atractivo. Muestra todos los medicamentos registrados con información detallada y opción de eliminar.
 
-Este archivo define la pantalla de notificacion que se muestra al usuario cuando es hora de tomar un medicamento. Es una pantalla simple pero muy importante, ya que es la interfaz que el usuario ve cuando recibe un recordatorio. Muestra el nombre del medicamento, la hora y dos botones de accion: Ya la tome y Emergencia.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.medicamentos`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.notificaciones
+### Explicación Detallada
 
-#### Codigo Completo
+**MedicationListScreen()**
+
+- Parámetros: `onAddMedication`, `onBack`, `viewModel`.
+- `TopAppBar` con título "Mis Medicamentos", botón atrás y botón "Agregar".
+- Muestra mensaje de estado vacío cuando no hay medicamentos.
+- Observa cambios en tiempo real con `collectLatest`.
+
+**MedicationCard() (versión decorativa)**
+
+Tarjeta con fondo rosa pastel (#FFE4F0), bordes redondeados de 20dp y círculos decorativos dibujados con `Canvas`. Muestra ícono circular rosa con emoji 💊, nombre en rosa fuerte (#D81B60) y botón de eliminar.
+
+La información se organiza en filas: Dosis (💉), Horarios (⏰) y Días (📅).
+
+**MedicationInfoRow()**
+
+Componente reutilizable que muestra una fila con caja blanca semitransparente con ícono emoji, etiqueta pequeña y valor en letra más grande.
+
+---
+
+## NotificacionMedicamento.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.notificaciones
@@ -3052,7 +4064,7 @@ fun NotificacionMedicamento(
                 verticalArrangement = Arrangement.SpaceEvenly
             ) {
                 Text(
-                    text = "Proximo medicamento",
+                    text = "🔔 Próximo medicamento",
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFF333333),
@@ -3077,7 +4089,7 @@ fun NotificacionMedicamento(
                         onClick = onYaLaTome,
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4CAF50))
                     ) {
-                        Text("Ya la tome", fontSize = 21.sp, color = Color.White)
+                        Text("Ya la tomé", fontSize = 21.sp, color = Color.White)
                     }
 
                     Button(
@@ -3093,17 +4105,38 @@ fun NotificacionMedicamento(
 }
 ```
 
-### Color.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define la pantalla de notificación que se muestra al usuario cuando es hora de tomar un medicamento. Muestra el nombre del medicamento, la hora y dos botones de acción: "Ya la tomé" y "Emergencia".
 
-Este archivo define los colores principales que se usan en el tema de la aplicacion. Los colores estan organizados en dos grupos: los de la paleta clara (version 40, mas oscuros) y los de la paleta oscura (version 80, mas claros). Esta es la paleta base que Material 3 usa para generar el esquema de colores completo.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.screens.notificaciones`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.theme
+### Explicación Detallada
 
-#### Codigo Completo
+**NotificacionMedicamento()**
+
+- Parámetros: `nombreMedicamento` (defecto: `"Amoxicilina"`), `horario` (defecto: `"7:00 am"`), `onYaLaTome`, `onEmergencia`.
+- Fondo gris claro (#EFEFEF) con tarjeta blanca de 230dp de altura y sombra de 8dp.
+
+**Contenido de la Tarjeta**
+
+- Título "🔔 Próximo medicamento" en gris oscuro (22sp, negritas).
+- Nombre y hora combinados en verde azulado (#00796B, 27sp) para que sean claramente visibles.
+- Botón verde (#4CAF50) "Ya la tomé" para confirmar la toma.
+- Botón rojo (#D32F2F) "Emergencia" para navegar a contactos de emergencia.
+
+### Flujo de Trabajo
+
+1. La alarma se activa → `AlarmReceiver` muestra la notificación.
+2. El usuario abre la notificación → llega a esta pantalla con los datos del medicamento.
+3. Si ya tomó el medicamento: presiona "Ya la tomé" → `onYaLaTome()` marca como tomado y cancela la notificación.
+4. Si tiene una emergencia: presiona "Emergencia" → `onEmergencia()` navega a la pantalla de contactos.
+
+---
+
+## Color.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.theme
@@ -3119,17 +4152,17 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 ```
 
-### Type.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define los colores principales que se usan en el tema de la aplicación. Los colores están organizados en dos grupos: los de la paleta clara (versión 40, más oscuros) y los de la paleta oscura (versión 80, más claros). Esta es la paleta base que Material 3 usa para generar el esquema de colores completo.
 
-Este archivo define la tipografia (estilos de texto) que se usa en toda la aplicacion siguiendo las especificaciones de Material 3. Actualmente solo define el estilo bodyLarge, pero esta preparado para agregar mas estilos de texto segun se necesiten.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.theme`
 
-mx.edu.utng.aimc.com.pantallaprincipal.ui.theme
+---
 
-#### Codigo Completo
+## Type.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.ui.theme
@@ -3151,17 +4184,70 @@ val Typography = Typography(
 )
 ```
 
-### NotificationHelper.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo define la tipografía (estilos de texto) que se usa en toda la aplicación siguiendo las especificaciones de Material 3. Actualmente solo define el estilo `bodyLarge`, pero está preparado para agregar más estilos según se necesiten.
 
-Esta clase se encarga de crear y mostrar las notificaciones de recordatorio de medicamentos. Configura el canal de notificaciones (necesario en Android 8+), construye notificaciones llamativas con colores verdes y texto expandido, y prepara los Intents para que el usuario pueda interactuar con ellas.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.ui.theme`
 
-mx.edu.utng.aimc.com.pantallaprincipal.utils
+### Explicación Detallada
 
-#### Codigo Completo
+**Estilo Definido: bodyLarge**
+
+```kotlin
+bodyLarge = TextStyle(
+    fontFamily = FontFamily.Default,  // Usa la fuente por defecto del sistema
+    fontWeight = FontWeight.Normal,   // Peso normal (equivalente a 400)
+    fontSize = 16.sp,                  // Tamaño estándar para lectura
+    lineHeight = 24.sp,                // Altura de línea para mejor legibilidad
+    letterSpacing = 0.5.sp             // Espaciado mínimo entre letras
+)
+```
+
+- `fontFamily = FontFamily.Default`: Usa la fuente predeterminada del sistema (Roboto en Android). Asegura que la app se vea nativa.
+- `fontWeight = FontWeight.Normal`: Peso normal de la fuente, sin negritas.
+- `fontSize = 16.sp`: Tamaño estándar para lectura cómoda. `sp` se ajusta según las preferencias de accesibilidad del usuario.
+- `lineHeight = 24.sp`: Espacio entre líneas, mejora la legibilidad en párrafos largos.
+- `letterSpacing = 0.5.sp`: Pequeño espaciado entre caracteres para mejor claridad.
+
+**Estilos Comentados (Preparados para futuro)**
+
+El archivo incluye comentarios con otros estilos que podrían implementarse:
+
+```kotlin
+/*
+titleLarge = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Normal,
+    fontSize = 22.sp,
+    lineHeight = 28.sp,
+    letterSpacing = 0.sp
+),
+labelSmall = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Medium,
+    fontSize = 11.sp,
+    lineHeight = 16.sp,
+    letterSpacing = 0.5.sp
+)
+*/
+```
+
+- `titleLarge`: Para títulos importantes (22sp).
+- `labelSmall`: Para textos muy pequeños como etiquetas (11sp, con peso Medium para destacar).
+
+### Propósito
+
+- **Consistencia visual**: Toda la app usa los mismos estilos de texto.
+- **Mantenibilidad**: Cambiar un estilo en un solo lugar afecta toda la app.
+- **Jerarquía visual**: Diferentes estilos crean una jerarquía clara para el usuario.
+- **Accesibilidad**: Usar `sp` permite que el texto se escale con preferencias del usuario.
+
+---
+
+## NotificationHelper.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.utils
@@ -3215,15 +4301,15 @@ class NotificationHelper(private val context: Context) {
 
     fun showMedicationNotification(medName: String, medId: Int) {
 
-        val bigTitle = "HORA DE TU MEDICAMENTO"
+        val bigTitle = "⏰ ¡HORA DE TU MEDICAMENTO!"
 
         val bigContent = """
-            Medicamento: $medName
+            💊 Medicamento: $medName
             
             Es momento de tomar tu dosis.
             Tu salud es nuestra prioridad.
             
-            No olvides tomar tu medicamento
+            ⚕️ ¡No olvides tomar tu medicamento!
         """.trimIndent()
 
         val markTakenIntent = Intent(context, AlarmReceiver::class.java).apply {
@@ -3252,7 +4338,7 @@ class NotificationHelper(private val context: Context) {
                 NotificationCompat.BigTextStyle()
                     .bigText(bigContent)
                     .setBigContentTitle(bigTitle)
-                    .setSummaryText("Tu salud es primero")
+                    .setSummaryText("💚 Tu salud es primero")
             )
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setVibrate(longArrayOf(0, 500, 200, 500))
@@ -3264,17 +4350,34 @@ class NotificationHelper(private val context: Context) {
 }
 ```
 
-### AlarmUtils.kt
+### Descripción General
 
-#### Descripcion General
+Esta clase se encarga de crear y mostrar las notificaciones de recordatorio de medicamentos. Configura el canal de notificaciones (necesario en Android 8+), construye notificaciones llamativas con colores verdes y texto expandido.
 
-Este archivo contiene funciones utilitarias para programar y cancelar alarmas de medicamentos usando AlarmManager. Calcula fechas futuras, maneja repeticiones semanales y genera IDs unicos para cada alarma.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.utils`
 
-mx.edu.utng.aimc.com.pantallaprincipal.utils
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades**
+
+- `CHANNEL_ID`: Identificador único del canal de notificaciones.
+- `CHANNEL_NAME`: Nombre visible del canal en configuración del sistema.
+- `notificationManager`: Servicio del sistema para gestionar notificaciones.
+- `ACCENT_COLOR_GREEN`: Color verde intenso (0xFF00FF00) para destacar visualmente.
+
+**Inicialización**
+
+Al crear una instancia, automáticamente crea el canal de notificaciones con importancia alta, luz LED verde y vibración personalizada (500ms, pausa 200ms, 500ms).
+
+**showMedicationNotification()**
+
+Construye y muestra una notificación con: título "⏰ ¡HORA DE TU MEDICAMENTO!", texto expandido al desplegar, color verde intenso (`colorized = true`), prioridad máxima, categoría alarma, vibración y luz LED.
+
+---
+
+## AlarmUtils.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.utils
@@ -3380,17 +4483,44 @@ fun cancelAlarmsForMedication(context: Context, medId: Int) {
 }
 ```
 
-### PlacesApiHelper.kt
+### Descripción General
 
-#### Descripcion General
+Este archivo contiene funciones utilitarias para programar y cancelar alarmas de medicamentos usando `AlarmManager`. Calcula fechas futuras, maneja repeticiones semanales y genera IDs únicos para cada alarma.
 
-Este helper maneja la interaccion con Google Places API para buscar farmacias cercanas a la ubicacion del usuario. Inicializa el servicio, realiza busquedas, calcula distancias y formatea resultados.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.utils`
 
-mx.edu.utng.aimc.com.pantallaprincipal.utils
+### Explicación Detallada
 
-#### Codigo Completo
+**Constantes de Acción**
+
+- `ACTION_MEDICATION_ALARM`: Identifica alarmas de medicamentos.
+- `ACTION_MARK_TAKEN`: Identifica la acción de "Ya lo tomé".
+
+**Mapa de Días**
+
+```kotlin
+private val dayMap = mapOf(
+    "Dom" to Calendar.SUNDAY, "Lun" to Calendar.MONDAY, "Mar" to Calendar.TUESDAY,
+    "Mie" to Calendar.WEDNESDAY, "Jue" to Calendar.THURSDAY, "Vie" to Calendar.FRIDAY,
+    "Sab" to Calendar.SATURDAY
+)
+```
+
+Convierte abreviaturas de días a constantes de `Calendar`.
+
+**scheduleAlarmsForMedication()**
+
+Programa alarmas para un medicamento según sus horarios y días. Para cada combinación de horario y día, genera un ID único (`medId*100 + timeIndex*10 + dayOfWeek`), calcula el próximo momento de disparo y usa `setRepeating` con intervalo semanal. Si la hora ya pasó hoy, programa para la próxima semana.
+
+**cancelAlarmsForMedication()**
+
+Cancela todas las alarmas de un medicamento. Itera por posibles horarios (0-4) y todos los días, genera los mismos IDs que al programar y busca `PendingIntents` sin crear nuevos (`FLAG_NO_CREATE`). Si existen, los cancela y libera recursos.
+
+---
+
+## PlacesApiHelper.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.utils
@@ -3451,7 +4581,7 @@ object PlacesApiHelper {
                         farmacias.add(
                             Farmacia(
                                 nombre = place.name ?: "Farmacia",
-                                direccion = place.address ?: "Direccion no disponible",
+                                direccion = place.address ?: "Dirección no disponible",
                                 distancia = formatearDistancia(distancia),
                                 latLng = latLng
                             )
@@ -3494,17 +4624,27 @@ object PlacesApiHelper {
 }
 ```
 
-### ThemePreferences.kt
+### Descripción General
 
-#### Descripcion General
+Este helper maneja la interacción con Google Places API para buscar farmacias cercanas a la ubicación del usuario. Inicializa el servicio, realiza búsquedas, calcula distancias y formatea resultados.
 
-Esta clase maneja las preferencias de tema (oscuro/claro) usando Jetpack DataStore, una alternativa moderna a SharedPreferences. Guarda la preferencia del usuario de forma persistente.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.utils`
 
-mx.edu.utng.aimc.com.pantallaprincipal.utils
+### Explicación Detallada
 
-#### Codigo Completo
+**initialize()** — Inicializa el SDK de Places con la API key. Solo si no estaba inicializado previamente.
+
+**buscarFarmacias()** — Crea un cliente de Places, solicita lugares cercanos con campos específicos (nombre, dirección, coordenadas, tipos), filtra los que sean de tipo `PHARMACY` o cuyo nombre contenga "farmacia", calcula la distancia y devuelve las 10 más cercanas ordenadas por distancia.
+
+**calcularDistancia()** — Implementa la fórmula de Haversine para calcular distancia entre dos coordenadas en metros.
+
+**formatearDistancia()** — Formatea metros a `"XXX m"` si es menos de 1000 metros, o a `"X.X km"` si es más.
+
+---
+
+## ThemePreferences.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.utils
@@ -3539,17 +4679,39 @@ class ThemePreferences(private val context: Context) {
 }
 ```
 
-### AppointmentViewModel.kt
+### Descripción General
 
-#### Descripcion General
+Esta clase maneja las preferencias de tema (oscuro/claro) usando Jetpack DataStore, una alternativa moderna a SharedPreferences. Guarda la preferencia del usuario de forma persistente.
 
-Este ViewModel maneja la logica de negocio para las citas medicas. Conecta la interfaz de usuario con Firebase, tanto Firestore (para consultas en tiempo real) como Realtime Database (para respaldo). Tambien mantiene el estado de las citas para que la UI pueda observarlo.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.utils`
 
-mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
+### Explicación Detallada
 
-#### Codigo Completo
+**DataStore**
+
+```kotlin
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "theme_preferences")
+```
+
+Define una extensión de `Context` que proporciona una instancia de DataStore con nombre `"theme_preferences"`.
+
+**Clave de Preferencia**
+
+```kotlin
+private val IS_DARK_THEME = booleanPreferencesKey("is_dark_theme")
+```
+
+Define una clave booleana para guardar el estado del tema.
+
+**isDarkTheme: Flow\<Boolean\>** — Expone un `Flow` que emite el valor actual de la preferencia. Los componentes pueden observarlo para reaccionar a cambios.
+
+**setDarkTheme()** — Función suspendida que guarda un nuevo valor para la preferencia de tema.
+
+---
+
+## AppointmentViewModel.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
@@ -3600,23 +4762,54 @@ class AppointmentViewModel : ViewModel() {
     private fun saveAppointmentToFirebase(appt: AppointmentEntity) {
         val id = firebaseDb.child("appointments").push().key ?: return
         firebaseDb.child("appointments").child(id).setValue(appt)
-            .addOnSuccessListener { println("Cita guardada en Firebase Realtime DB") }
-            .addOnFailureListener { println("Error guardando cita: ${it.message}") }
+            .addOnSuccessListener { println("✅ Cita guardada en Firebase Realtime DB") }
+            .addOnFailureListener { println("❌ Error guardando cita: ${it.message}") }
     }
 }
 ```
 
-### AppointmentViewModelFactory.kt
+### Descripción General
 
-#### Descripcion General
+Este ViewModel maneja la lógica de negocio para las citas médicas. Conecta la interfaz de usuario con Firebase, tanto Firestore (para consultas en tiempo real) como Realtime Database (para respaldo).
 
-Fabrica para crear instancias de AppointmentViewModel. No necesita parametros porque el ViewModel crea sus propias dependencias internamente.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.viewmodel`
 
-mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades**
+
+- `repository`: Instancia de `FirebaseAppointmentRepository` para operaciones CRUD en Firestore.
+- `firebaseDb`: Referencia a Firebase Realtime Database para respaldo.
+- `allAppointments`: `StateFlow` que emite la lista de citas, observable desde la UI.
+
+**allAppointments**
+
+```kotlin
+val allAppointments = repository.getAllAppointments()
+    .stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = emptyList()
+    )
+```
+
+Convierte el `Flow` del repositorio en un `StateFlow` que se mantiene activo mientras haya suscriptores (más 5 segundos) y tiene valor inicial vacío.
+
+**insertAppointment()** — Guarda en Firestore usando el repositorio y también en Realtime Database como respaldo.
+
+**deleteAppointment()** — Elimina de Firestore usando el repositorio y busca y elimina en Realtime Database por lugar y fecha/hora.
+
+### Archivos Relacionados
+
+- `FirebaseAppointmentRepository.kt` — El repositorio que usa.
+- `AppointmentEntity.kt` — La entidad que maneja.
+- `AppointmentViewModelFactory.kt` — Su fábrica de creación.
+
+---
+
+## AppointmentViewModelFactory.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
@@ -3636,17 +4829,13 @@ class AppointmentViewModelFactory : ViewModelProvider.Factory {
 }
 ```
 
-### EmergencyContactViewModel.kt
+### Descripción General
 
-#### Descripcion General
+Fábrica para crear instancias de `AppointmentViewModel`. No necesita parámetros porque el ViewModel crea sus propias dependencias internamente.
 
-ViewModel para gestionar contactos de emergencia. Usa Firebase Firestore como fuente de datos y mantiene el estado para la UI.
+---
 
-#### Ubicacion
-
-mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
-
-#### Codigo Completo
+## EmergencyContactViewModel.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
@@ -3689,17 +4878,29 @@ class EmergencyContactViewModel : ViewModel() {
 }
 ```
 
-### EmergencyContactViewModelFactory.kt
+### Descripción General
 
-#### Descripcion General
+ViewModel para gestionar contactos de emergencia. Usa Firebase Firestore como fuente de datos y mantiene el estado para la UI.
 
-Fabrica simple para crear instancias de EmergencyContactViewModel. No requiere parametros.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.viewmodel`
 
-mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades**
+
+- `repository`: Instancia de `FirebaseContactRepository`.
+- `allContacts`: `StateFlow` con la lista de contactos.
+
+**Métodos**
+
+- `insertContact()`: Crea un nuevo `EmergencyContactEntity` y lo guarda en Firebase.
+- `deleteContact()`: Elimina un contacto existente de Firebase.
+
+---
+
+## EmergencyContactViewModelFactory.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
@@ -3719,17 +4920,13 @@ class EmergencyContactViewModelFactory : ViewModelProvider.Factory {
 }
 ```
 
-### MedicationViewModel.kt
+### Descripción General
 
-#### Descripcion General
+Fábrica simple para crear instancias de `EmergencyContactViewModel`. No requiere parámetros.
 
-ViewModel mas complejo que maneja la logica completa de medicamentos: guardado en Firebase, programacion de alarmas, sincronizacion con Realtime Database y seguimiento del progreso del tratamiento.
+---
 
-#### Ubicacion
-
-mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
-
-#### Codigo Completo
+## MedicationViewModel.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
@@ -3763,7 +4960,7 @@ class MedicationViewModel(
     init {
         viewModelScope.launch {
             allMedications.collect { meds ->
-                println("LISTA ACTUAL DE MEDICAMENTOS → $meds")
+                println("🔥 LISTA ACTUAL DE MEDICAMENTOS → $meds")
             }
         }
     }
@@ -3810,10 +5007,10 @@ class MedicationViewModel(
             .child(id)
             .setValue(med)
             .addOnSuccessListener {
-                println("Guardado en Firebase Realtime DB con exito")
+                println("🔥 Guardado en Firebase Realtime DB con éxito")
             }
             .addOnFailureListener {
-                println("Error guardando en Firebase: ${it.message}")
+                println("❌ Error guardando en Firebase: ${it.message}")
             }
     }
 
@@ -3850,17 +5047,42 @@ class MedicationViewModel(
 }
 ```
 
-### MedicationViewModelFactory.kt
+### Descripción General
 
-#### Descripcion General
+ViewModel más complejo que maneja la lógica completa de medicamentos: guardado en Firebase, programación de alarmas, sincronización con Realtime Database y seguimiento del progreso del tratamiento.
 
-Fabrica que proporciona el Application context al MedicationViewModel, necesario para programar alarmas.
+### Ubicación
 
-#### Ubicacion
+`mx.edu.utng.aimc.com.pantallaprincipal.viewmodel`
 
-mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
+### Explicación Detallada
 
-#### Codigo Completo
+**Propiedades**
+
+Extiende `AndroidViewModel` para tener acceso al `Context` de la aplicación, necesario para programar alarmas.
+
+- `repository`: `FirebaseMedicationRepository` para Firestore.
+- `firebaseDb`: Realtime Database para respaldo.
+- `allMedications`: `StateFlow` con la lista observable.
+
+**init{}** — Solo imprime en consola la lista actual para debugging.
+
+**insertMedication()** — Flujo completo al agregar un medicamento: crea la entidad con `daysTaken = 0`, guarda en Firestore, genera ID único para alarmas (`hash de nombre + timestamp`), programa alarmas y guarda respaldo en Realtime Database.
+
+**deleteMedication()** — Elimina de Firestore, cancela todas las alarmas y elimina de Realtime Database.
+
+**markMedicationTaken()** — Incrementa `daysTaken`, actualiza en Firestore (elimina viejo + inserta nuevo) y, si completó el tratamiento, elimina automáticamente el medicamento.
+
+### Archivos Relacionados
+
+- `FirebaseMedicationRepository.kt` — El repositorio que usa.
+- `AlarmUtils.kt` — Para programar y cancelar alarmas.
+- `MedicationEntity.kt` — La entidad que maneja.
+- `MedicationViewModelFactory.kt` — Su fábrica de creación.
+
+---
+
+## MedicationViewModelFactory.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.viewmodel
@@ -3883,17 +5105,13 @@ class MedicationViewModelFactory(
 }
 ```
 
-### MainActivity.kt
+### Descripción General
 
-#### Descripcion General
+Fábrica que proporciona el `Application` context al `MedicationViewModel`, necesario para programar alarmas.
 
-Actividad principal de la aplicacion. Punto de entrada que configura todo lo necesario: permisos de notificaciones (Android 13+), inicializacion de Places API, tema (claro/oscuro) y navegacion.
+---
 
-#### Ubicacion
-
-Raiz del paquete (mx.edu.utng.aimc.com.pantallaprincipal)
-
-#### Codigo Completo
+## MainActivity.kt
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal
@@ -3960,61 +5178,73 @@ class MainActivity : ComponentActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == NOTIFICATION_PERMISSION_REQUEST_CODE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                android.util.Log.d("MainActivity", "Permiso de notificacion concedido.")
+                android.util.Log.d("MainActivity", "Permiso de notificación concedido.")
             } else {
-                android.util.Log.w("MainActivity", "El permiso de notificacion fue denegado.")
+                android.util.Log.w("MainActivity", "El permiso de notificación fue denegado.")
             }
         }
     }
 }
 ```
 
-## Conclusion
+### Descripción General
 
-MediAlerta es una aplicacion completa que cumple con su objetivo principal: ayudar a las personas a organizar su salud de manera sencilla y efectiva. A lo largo de su desarrollo, se implementaron todas las funcionalidades planeadas en el manual original, logrando una aplicacion funcional y estable.
+Actividad principal de la aplicación. Punto de entrada que configura todo lo necesario: permisos de notificaciones, inicialización de Places API, tema y navegación.
 
-### Lo que se logro
+### Ubicación
 
-- **Gestion de medicamentos**: Los usuarios pueden registrar sus medicamentos con nombre, dosis, notas, horarios especificos y dias de la semana. La aplicacion lleva un conteo de los dias tomados y muestra el progreso del tratamiento con barras visuales. Ademas, programa alarmas automaticas para recordar al usuario cuando debe tomar cada dosis.
+Raíz del paquete (`mx.edu.utng.aimc.com.pantallaprincipal`).
 
-- **Citas medicas**: Se implemento un sistema completo para agendar citas, con selectores de fecha y hora, lista de citas ordenadas y opcion de eliminar. Los datos se guardan tanto local como en la nube.
+### Explicación Detallada
 
-- **Contactos de emergencia**: Los usuarios pueden guardar numeros importantes como familiares, medicos o servicios de emergencia. Desde la misma aplicacion pueden llamar a estos contactos o directamente al 911 con un solo toque.
+**onCreate()**
 
-- **Farmacias cercanas**: Usando Google Maps y Places API, la aplicacion muestra un mapa con la ubicacion del usuario y las farmacias mas cercanas. Cada farmacia aparece con su nombre, direccion y un boton para abrir Google Maps con la ruta para llegar.
+- `enableEdgeToEdge()`: Hace que la app use toda la pantalla, incluyendo áreas de sistema.
+- Solicita permiso de notificaciones (solo Android 13+).
+- Inicializa Places API con la API key (hardcodeada).
+- Lee las preferencias de tema guardadas y aplica el tema correspondiente.
+- Inicia la navegación con `NavGraph()`.
 
-- **Personalizacion**: La aplicacion recuerda las preferencias del usuario, como el tema claro u oscuro, y las aplica cada vez que se abre.
+**requestNotificationPermission()** — Para Android 13 (Tiramisu) y superior, solicita permiso `POST_NOTIFICATIONS` necesario para mostrar notificaciones.
 
-- **Notificaciones**: El sistema de alarmas y notificaciones funciona correctamente, mostrando recordatorios llamativos con colores verdes y opciones para confirmar que se tomo el medicamento.
+**onRequestPermissionsResult()** — Maneja la respuesta del usuario a la solicitud de permisos y registra el resultado en log.
 
-### Tecnologias utilizadas
+---
 
-El proyecto hace uso de tecnologias modernas de Android:
+## Conclusión
 
-- **Kotlin**: Lenguaje principal de programacion
-- **Jetpack Compose**: Para construir interfaces de usuario declarativas y reactivas
-- **Room**: Base de datos local en el dispositivo
-- **Firebase**: Autenticacion, Firestore y Realtime Database para sincronizacion en la nube
-- **Google Maps y Places API**: Para ubicacion y busqueda de farmacias
-- **AlarmManager**: Para programar recordatorios en segundo plano
-- **DataStore**: Para guardar preferencias de usuario de forma moderna
-- **Corrutinas y Flow**: Para operaciones asincronas y datos reactivos
+MediAlerta es una aplicación completa que cumple con su objetivo principal: ayudar a las personas a organizar su salud de manera sencilla y efectiva. A lo largo de su desarrollo, se implementaron todas las funcionalidades planeadas en el manual original, logrando una aplicación funcional y estable.
+
+### Lo que se logró
+
+**Gestión de medicamentos**: Los usuarios pueden registrar sus medicamentos con nombre, dosis, notas, horarios específicos y días de la semana. La aplicación lleva un conteo de los días tomados y muestra el progreso del tratamiento con barras visuales. Además, programa alarmas automáticas para recordar al usuario cuándo debe tomar cada dosis.
+
+**Citas médicas**: Se implementó un sistema completo para agendar citas, con selectores de fecha y hora, lista de citas ordenadas y opción de eliminar. Los datos se guardan tanto local como en la nube.
+
+**Contactos de emergencia**: Los usuarios pueden guardar números importantes como familiares, médicos o servicios de emergencia. Desde la misma aplicación pueden llamar a estos contactos o directamente al 911 con un solo toque.
+
+**Farmacias cercanas**: Usando Google Maps y Places API, la aplicación muestra un mapa con la ubicación del usuario y las farmacias más cercanas. Cada farmacia aparece con su nombre, dirección y un botón para abrir Google Maps con la ruta para llegar.
+
+**Personalización**: La aplicación recuerda las preferencias del usuario, como el tema claro u oscuro, y las aplica cada vez que se abre.
+
+**Notificaciones**: El sistema de alarmas y notificaciones funciona correctamente, mostrando recordatorios llamativos con colores verdes y opciones para confirmar que se tomó el medicamento.
+
+### Tecnologías utilizadas
+
+El proyecto hace uso de tecnologías modernas de Android: Kotlin, Jetpack Compose, Room, Firebase (Firestore y Realtime Database), Google Maps y Places API, AlarmManager, DataStore, Corrutinas y Flow.
 
 ### Aspectos a mejorar
 
-Como todo proyecto, hay cosas que podrian mejorarse en versiones futuras:
-
-- La API key de Google Maps esta hardcodeada en el codigo, lo cual no es seguro. Deberia moverse a un archivo de configuracion seguro.
-- Las notificaciones podrian tener mas opciones, como posponer el recordatorio 5, 10 o 15 minutos.
-- La eliminacion de medicamentos al completar el tratamiento es automatica, pero algunos usuarios podrian querer mantener un historial.
-- Validacion de datos: En algunos formularios no se valida que los campos tengan informacion antes de guardar.
-- Dos pantallas de medicamentos (MedicamentosScreen y MedicationListScreen) podrian unificarse para evitar confusion.
+- La API key de Google Maps está hardcodeada en el código; debería moverse a un archivo de configuración seguro.
+- Las notificaciones podrían tener más opciones, como posponer el recordatorio 5, 10 o 15 minutos.
+- La eliminación de medicamentos al completar el tratamiento es automática, pero algunos usuarios podrían querer mantener un historial.
+- En algunos formularios no se valida que los campos tengan información antes de guardar.
+- Las dos pantallas de medicamentos (`MedicamentosScreen` y `MedicationListScreen`) podrían unificarse para evitar confusión.
 
 ### En resumen
 
-MediAlerta es una aplicacion funcional y bien estructurada que cumple con los objetivos planteados. Combina almacenamiento local y en la nube, ofrece una interfaz atractiva y facil de usar, y resuelve necesidades reales de personas que requieren organizacion en su salud.
+MediAlerta es una aplicación funcional y bien estructurada que cumple con los objetivos planteados. Combina almacenamiento local y en la nube, ofrece una interfaz atractiva y fácil de usar, y resuelve necesidades reales de personas que requieren organización en su salud.
 
-El codigo esta organizado siguiendo buenas practicas como la separacion en capas (data, ui, viewmodel), uso de repositorios, inyeccion de dependencias y programacion reactiva con Flow. Esto hace que la aplicacion sea mantenible y escalable para futuras mejoras.
+El código está organizado siguiendo buenas prácticas como la separación en capas (data, ui, viewmodel), uso de repositorios, inyección de dependencias y programación reactiva con Flow. Esto hace que la aplicación sea mantenible y escalable para futuras mejoras.
 
-En conclusion, MediAlerta es una herramienta util que puede ayudar a muchas personas a no olvidar sus medicamentos, recordar sus citas medicas y estar preparadas ante cualquier emergencia, todo desde la comodidad de su telefono movil.
-```
+En conclusión, MediAlerta es una herramienta útil que puede ayudar a muchas personas a no olvidar sus medicamentos, recordar sus citas médicas y estar preparadas ante cualquier emergencia, todo desde la comodidad de su teléfono móvil.
