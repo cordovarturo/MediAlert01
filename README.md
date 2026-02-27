@@ -27,6 +27,70 @@ interface AppointmentDao {
     @Query("SELECT * FROM appointments ORDER BY dateTime ASC")
     fun getAllAppointments(): Flow<List<AppointmentEntity>>
 }
+
+📋 Descripción General
+Este archivo es el encargado de comunicarse con la base de datos local de la aplicación, específicamente con la tabla donde se guardan las citas médicas. Usa Room, que es una herramienta que hace más fácil guardar y recuperar información en el teléfono.
+
+📁 Ubicación
+mx.edu.utng.aimc.com.pantallaprincipal.data.dao
+
+🧩 Explicación Detallada
+¿Qué es un DAO?
+Un DAO (Data Access Object) es un componente que actúa como intermediario entre la aplicación y la base de datos. En este caso, AppointmentDao se encarga de todas las operaciones relacionadas con las citas médicas.
+
+Anotaciones y su Significado
+@Dao: Esta anotación le indica a la aplicación que esta interfaz va a manejar las operaciones de la base de datos para las citas. Es como un identificador que dice "aquí se van a hacer las consultas".
+
+@Insert: Marca el método que insertará nuevos registros en la base de datos.
+
+@Delete: Marca el método que eliminará registros existentes.
+
+@Query: Permite escribir consultas SQL personalizadas para obtener datos específicos.
+
+Métodos y su Función
+insertAppointment()
+Este método guarda una nueva cita en la base de datos del teléfono. Cuando se guarda, si ya existía una cita con el mismo identificador, la reemplaza por la nueva debido a la estrategia OnConflictStrategy.REPLACE. Devuelve un número que es el identificador con el que se guardó la cita.
+
+Parámetros: Recibe un objeto AppointmentEntity que contiene todos los datos de la cita como título, fecha, hora, etc.
+
+Retorno: Un valor de tipo Long que es el ID único asignado a la cita recién guardada.
+
+deleteAppointment()
+Este método elimina una cita existente de la base de datos. Solo hay que pasarle la cita que se quiere borrar y él se encarga de quitarla de la tabla.
+
+Parámetros: Recibe el objeto AppointmentEntity que se desea eliminar.
+
+Retorno: No devuelve ningún valor.
+
+getAllAppointments()
+Este método obtiene todas las citas que están guardadas y las entrega ordenadas por fecha y hora, de la más próxima a la más lejana. Lo interesante es que usa Flow, que es una forma de estar siempre actualizado: si se agrega o elimina una cita, la lista se actualiza solita sin necesidad de hacer nada más.
+
+Parámetros: No recibe parámetros.
+
+Retorno: Un Flow que emite una lista de objetos AppointmentEntity. Cada vez que hay cambios en la tabla de citas, esta lista se actualiza automáticamente.
+
+🔄 Flujo de Trabajo Típico
+Guardar una cita: Cuando el usuario crea una nueva cita, la aplicación llama a insertAppointment() con los datos de la cita.
+
+Consultar citas: La pantalla que muestra las citas está observando getAllAppointments() para tener siempre la lista actualizada.
+
+Eliminar una cita: Cuando el usuario decide borrar una cita, la aplicación llama a deleteAppointment() con la cita que se quiere eliminar.
+
+Actualización automática: Al modificar la base de datos, el Flow emite automáticamente la nueva lista y la pantalla se actualiza sin necesidad de recargar.
+
+⚠️ Notas Importantes
+Los métodos insertAppointment() y deleteAppointment() son suspend, lo que significa que deben ejecutarse en segundo plano para no bloquear la interfaz de usuario.
+
+La estrategia OnConflictStrategy.REPLACE garantiza que no habrá conflictos si se intenta guardar una cita con un ID que ya existe.
+
+El uso de Flow hace que la aplicación sea más eficiente, ya que no necesita estar haciendo consultas constantemente para verificar si los datos cambiaron.
+
+🔗 Archivos Relacionados
+AppointmentEntity.kt - Define la estructura de una cita en la base de datos
+
+AppDatabase.kt - La base de datos principal que contiene esta tabla
+
+AppointmentRepository.kt - El repositorio que utiliza este DAO para sus operaciones
 # AppointmentDao.kt
 
 ## 📋 Descripción General
