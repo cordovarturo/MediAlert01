@@ -7,7 +7,7 @@ Vídeo de prueba
 https://drive.google.com/file/d/1xIXpM33FM7raiktjbWgTmhMpb74Ps2iN/view?usp=sharing
 
 
-## 📁 Descripción de Carpetas
+##  Descripción de Carpetas
 
 ### `data/`
 Contiene todo lo relacionado con el manejo de datos de la aplicación, incluyendo la base de datos local y las fuentes de datos.
@@ -46,7 +46,7 @@ ViewModels que separan la lógica de negocio de la interfaz de usuario y manejan
 - **MainActivity.kt**: Actividad principal que inicia la aplicación
 - **AndroidManifest.xml**: Configuración de la aplicación (no mostrado en el árbol pero mencionado)
 
-## 🔧 Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 - **Kotlin**: Lenguaje de programación principal
 - **Jetpack Compose**: Para la interfaz de usuario moderna
@@ -85,13 +85,13 @@ interface AppointmentDao {
     fun getAllAppointments(): Flow<List<AppointmentEntity>>
 }
 
-📋 Descripción General
+ Descripción General
 Este archivo es el encargado de comunicarse con la base de datos local de la aplicación, específicamente con la tabla donde se guardan las citas médicas. Usa Room, que es una herramienta que hace más fácil guardar y recuperar información en el teléfono.
 
-📁 Ubicación
+ Ubicación
 mx.edu.utng.aimc.com.pantallaprincipal.data.dao
 
-🧩 Explicación Detallada
+ Explicación Detallada
 ¿Qué es un DAO?
 Un DAO (Data Access Object) es un componente que actúa como intermediario entre la aplicación y la base de datos. En este caso, AppointmentDao se encarga de todas las operaciones relacionadas con las citas médicas.
 
@@ -126,7 +126,7 @@ Parámetros: No recibe parámetros.
 
 Retorno: Un Flow que emite una lista de objetos AppointmentEntity. Cada vez que hay cambios en la tabla de citas, esta lista se actualiza automáticamente.
 
-🔄 Flujo de Trabajo Típico
+ Flujo de Trabajo Típico
 Guardar una cita: Cuando el usuario crea una nueva cita, la aplicación llama a insertAppointment() con los datos de la cita.
 
 Consultar citas: La pantalla que muestra las citas está observando getAllAppointments() para tener siempre la lista actualizada.
@@ -135,14 +135,14 @@ Eliminar una cita: Cuando el usuario decide borrar una cita, la aplicación llam
 
 Actualización automática: Al modificar la base de datos, el Flow emite automáticamente la nueva lista y la pantalla se actualiza sin necesidad de recargar.
 
-⚠️ Notas Importantes
+ Notas Importantes
 Los métodos insertAppointment() y deleteAppointment() son suspend, lo que significa que deben ejecutarse en segundo plano para no bloquear la interfaz de usuario.
 
 La estrategia OnConflictStrategy.REPLACE garantiza que no habrá conflictos si se intenta guardar una cita con un ID que ya existe.
 
 El uso de Flow hace que la aplicación sea más eficiente, ya que no necesita estar haciendo consultas constantemente para verificar si los datos cambiaron.
 
-🔗 Archivos Relacionados
+ Archivos Relacionados
 AppointmentEntity.kt - Define la estructura de una cita en la base de datos
 
 AppDatabase.kt - La base de datos principal que contiene esta tabla
@@ -150,24 +150,24 @@ AppDatabase.kt - La base de datos principal que contiene esta tabla
 AppointmentRepository.kt - El repositorio que utiliza este DAO para sus operaciones
 # AppointmentDao.kt
 
-## 📋 Descripción General
+##  Descripción General
 Este archivo define la interfaz de acceso a datos (DAO) para la entidad `AppointmentEntity` utilizando Room, la biblioteca de persistencia de Android. Su función principal es gestionar las operaciones de la base de datos local relacionadas con las citas médicas.
 
 ---
 
-## 📁 Ubicación
+##  Ubicación
 `mx.edu.utng.aimc.com.pantallaprincipal.data.dao`
 
 ---
 
-## 🔧 Dependencias
+##  Dependencias
 - `androidx.room.*` - Para las anotaciones y operaciones de Room
 - `kotlinx.coroutines.flow.Flow` - Para observar cambios en tiempo real
 - `mx.edu.utng.aimc.com.pantallaprincipal.data.entity.AppointmentEntity` - La entidad que representa una cita
 
 ---
 
-## 📄 Código Completo
+##  Código Completo
 
 ```kotlin
 package mx.edu.utng.aimc.com.pantallaprincipal.data.dao
